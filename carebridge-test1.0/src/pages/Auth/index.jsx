@@ -13,7 +13,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 
-function App() {
+function Authentication() {
 
   const [justifyActive, setJustifyActive] = useState('tab1');;
 
@@ -60,6 +60,10 @@ function App() {
               <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
                 <MDBIcon fab icon='google' size="sm"/>
               </MDBBtn>
+
+              <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
+                <MDBIcon fab icon='github' size="sm"/>
+              </MDBBtn>
             </div>
 
             <p className="text-center mt-3">or:</p>
@@ -95,6 +99,10 @@ function App() {
               <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
                 <MDBIcon fab icon='google' size="sm"/>
               </MDBBtn>
+
+              <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
+                <MDBIcon fab icon='github' size="sm"/>
+              </MDBBtn>
             </div>
 
             <p className="text-center mt-3">or:</p>
@@ -119,4 +127,4 @@ function App() {
   );
 }
 
-export default App;
+export default Authentication;
