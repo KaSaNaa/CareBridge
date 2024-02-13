@@ -1,0 +1,9 @@
+#root {
+  max-width: 1280px;
+  margin: 300px;
+  
+}
+
+.header {
+  align-self: top;
+}
