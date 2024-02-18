@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import bgImg from "../assets/bg.svg";
-import Sidebar from "./SideBar";
-import Main from "./Main";
+import bgImg from '../../assets/bg.svg';
+import Sidebar from "../../components/SideBar";
+import Main from "../../components/BubblesContainer";
 
-const App = () => {
+const Signin = () => {
   return (
     <Container>
       <Wrapper>
@@ -33,4 +33,4 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-export default App;
+export default Signin;

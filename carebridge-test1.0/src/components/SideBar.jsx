@@ -7,7 +7,7 @@ const Sidebar = () => {
   return (
     <Container>
       <LogoWrapper>
-        <img src={logo} alt="" />
+        <img src={logo} alt="CareBridge-Logo" />
         <h3>
           Care <span>Bridge</span>
         </h3>
@@ -17,7 +17,7 @@ const Sidebar = () => {
         <Input placeholder="Full Name" />
         <Input type="email" placeholder="Email" />
         <Input type="password" placeholder="Password" />
-        <Input type="password" placeholder="Confrim Password" />
+        <Input type="password" placeholder="Confirm Password" />
         <button>Sign Up</button>
       </Form>
       <div>
@@ -68,7 +68,7 @@ const Form = styled.form`
 
     &:hover {
       transform: translateY(-3px);
-      background-color: #07c978
+      background-color: #07c978;
     }
   }
 `;
@@ -79,7 +79,7 @@ const LogoWrapper = styled.div`
   }
 
   h3 {
-    color: #E43B45;
+    color: #e43b45;
     text-align: center;
     font-size: 22px;
   }
