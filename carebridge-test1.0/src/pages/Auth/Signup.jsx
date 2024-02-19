@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import bgImg from "../../assets/bg.svg";
+import bgImg from '../../assets/bg.svg';
 import Sidebar from "../../components/SideBar";
 import WeCare from "../../components/WeCare";
 
-const Signin = () => {
+const Signup = () => {
   return (
     <Container>
       <Wrapper>
-        <Sidebar formType={"signin"} />
+        <Sidebar formType={"signup"} />
         <WeCare />
       </Wrapper>
     </Container>
@@ -33,4 +33,4 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-export default Signin;
+export default Signup;

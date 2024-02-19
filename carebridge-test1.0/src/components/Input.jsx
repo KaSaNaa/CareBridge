@@ -22,7 +22,7 @@ const StyledInput = styled.input`
   height: 40px;
   border: none;
   margin: 0.5rem 0;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   padding: 0 1rem;
@@ -42,18 +42,18 @@ const Container = styled.div`
 const Status = styled.div`
   height: 10px;
   width: 10px;
-  background: #9d9d9d;
+  color: #4f6354;
   border-radius: 10px;
   margin-left: 1rem;
 
   ${StyledInput}:focus + & {
-    background: #ffa689;
+    background: #ffb4ab;
   }
   ${StyledInput}:invalid + & {
-    background: #fe2f75;
+    background: #ba1a1a;
   }
   ${StyledInput}:valid + & {
-    background: #70edb9;
+    background: #6d53d9;
   }
 `;
 

@@ -1,10 +1,11 @@
 import React from 'react'
-import Signin from './pages/Auth/Signin';
+import Signup from './pages/Auth/Signup.jsx';
+import Signin from './pages/Auth/Signin.jsx';
 
 const App = () => {
   return (
     <div>
-      <Signin />
+      <Signup />
     </div>
   )
 }
