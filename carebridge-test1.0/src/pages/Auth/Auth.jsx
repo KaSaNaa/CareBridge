@@ -4,11 +4,11 @@ import bgImg from '../../assets/bg.svg';
 import Sidebar from "../../components/SideBar";
 import WeCare from "../../components/WeCare";
 
-const Signup = () => {
+const Auth = ({inORup}) => {
   return (
     <Container>
       <Wrapper>
-        <Sidebar formType={"signup"} />
+        <Sidebar formType={inORup} />
         <WeCare />
       </Wrapper>
     </Container>
@@ -33,4 +33,4 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-export default Signup;
+export default Auth;

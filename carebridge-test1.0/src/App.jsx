@@ -1,13 +1,12 @@
-import React from 'react'
-import Signup from './pages/Auth/Signup.jsx';
-import Signin from './pages/Auth/Signin.jsx';
+import React from "react";
+import Auth from "./pages/Auth/Auth.jsx";
 
 const App = () => {
   return (
     <div>
-      <Signup />
+      <Auth inORup={"signup"} />
     </div>
-  )
-}
+  );
+};
 
 export default App;

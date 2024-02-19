@@ -3,7 +3,7 @@ import styled from "styled-components";
 import logo from "../assets/logo.svg";
 import Input from "./Input";
 
-const Sidebar = ({formType}) => {
+const Sidebar = ({ formType }) => {
   return (
     <Container>
       <LogoWrapper>
@@ -32,10 +32,18 @@ const Sidebar = ({formType}) => {
       <div>
         <Terms>
           By signing up, I agree to the Privacy Policy <br /> and Terms of
-          Service
+          Service.
         </Terms>
         <h4>
-          Already have an account? <span>Sign in</span>
+          {formType === "signup" ? (
+            <>
+              Already have an account? <span>Sign in</span>
+            </>
+          ) : (
+            <>
+              New to CareBridge? <span>Sign up</span> here.
+            </>
+          )}
         </h4>
       </div>
     </Container>
@@ -90,13 +98,13 @@ const LogoWrapper = styled.div`
   h3 {
     color: #006878;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 
   span {
     color: #6d5389;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 `;
 
