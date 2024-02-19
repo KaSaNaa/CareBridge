@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Main = () => {
+const WeCare = () => {
   return (
     <Container>
       <h1>
@@ -22,12 +22,12 @@ const Container = styled.div`
   h1 {
     font-size: 65px;
     font-weight: 900;
-    color: #343434;
+    color: #f0f0f0;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 480px) {
     display: none;
   }
 `;
 
-export default Main;
+export default WeCare;

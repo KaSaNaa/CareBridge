@@ -3,22 +3,31 @@ import styled from "styled-components";
 import logo from "../assets/logo.svg";
 import Input from "./Input";
 
-const Sidebar = () => {
+const Sidebar = ({formType}) => {
   return (
     <Container>
       <LogoWrapper>
         <img src={logo} alt="CareBridge-Logo" />
         <h3>
-          Care <span>Bridge</span>
+          CARE<span> BRIDGE</span>
         </h3>
       </LogoWrapper>
       <Form>
-        <h3>Sign Up</h3>
-        <Input placeholder="Full Name" />
-        <Input type="email" placeholder="Email" />
-        <Input type="password" placeholder="Password" />
-        <Input type="password" placeholder="Confirm Password" />
-        <button>Sign Up</button>
+        <h3>{formType === "signup" ? "Sign Up" : "Sign In"}</h3>
+        {formType === "signup" ? (
+          <>
+            <Input placeholder="Full Name" />
+            <Input type="email" placeholder="Email" />
+            <Input type="password" placeholder="Password" />
+            <Input type="password" placeholder="Confirm Password" />
+          </>
+        ) : (
+          <>
+            <Input type="email" placeholder="Email" />
+            <Input type="password" placeholder="Password" />
+          </>
+        )}
+        <button>{formType === "signup" ? "Sign up" : "Sign in"}</button>
       </Form>
       <div>
         <Terms>
@@ -26,7 +35,7 @@ const Sidebar = () => {
           Service
         </Terms>
         <h4>
-          Already have an account? <span>Sign In</span>
+          Already have an account? <span>Sign in</span>
         </h4>
       </div>
     </Container>
@@ -37,7 +46,7 @@ const Terms = styled.p`
   padding: 0 1rem;
   text-align: center;
   font-size: 10px;
-  color: #808080;
+  color: #3c494c;
   font-weight: 300;
 `;
 
@@ -60,41 +69,41 @@ const Form = styled.form`
     margin: 1rem 0;
     box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    background-color: #70edb9;
-    color: #fff;
+    background-color: #006878;
+    color: #ffffff;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease-in;
 
     &:hover {
       transform: translateY(-3px);
-      background-color: #07c978;
+      background-color: #0191a8;
     }
   }
 `;
 
 const LogoWrapper = styled.div`
   img {
-    height: 6rem;
+    height: 7rem;
   }
 
   h3 {
-    color: #e43b45;
+    color: #006878;
     text-align: center;
-    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   span {
-    color: #07c978;
-    font-weight: 300;
-    font-size: 18px;
+    color: #6d5389;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 `;
 
 const Container = styled.div`
   min-width: 400px;
-  backdrop-filter: blur(35px);
-  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(30px);
+  background-color: #e8eff1ad;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -115,7 +124,7 @@ const Container = styled.div`
     margin-top: 2rem;
 
     span {
-      color: #ff8d8d;
+      color: #006878;
       cursor: pointer;
     }
   }
