@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 import bgImg from '../../assets/bg.svg';
-import Sidebar from "../../components/SideBar";
-import WeCare from "../../components/WeCare";
+import Sidebar from '../../components/SideBar';
+import WeCare from '../../components/WeCare';
 
 const Auth = ({inORup}) => {
   return (
