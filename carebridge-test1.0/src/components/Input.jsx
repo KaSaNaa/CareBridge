@@ -8,7 +8,7 @@ const Input = ({ type, placeholder }) => {
         placeholder={placeholder && placeholder}
         type={type ? type : "text"}
         required
-        autocomplete="off"
+        autoComplete="off"
       />
       <Status />
     </Container>

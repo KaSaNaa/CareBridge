@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
 import Input from "./Input";
+import { Link } from "react-router-dom";
 
 const Sidebar = ({ formType }) => {
   return (
@@ -16,15 +17,15 @@ const Sidebar = ({ formType }) => {
         <h3>{formType === "signup" ? "Sign Up" : "Sign In"}</h3>
         {formType === "signup" ? (
           <>
-            <Input placeholder="Full Name" />
-            <Input type="email" placeholder="Email" />
-            <Input type="password" placeholder="Password" />
-            <Input type="password" placeholder="Confirm Password" />
+            <Input id="fName" placeholder="Full Name" />
+            <Input id="email" type="email" placeholder="Email Address" />
+            <Input id="pswd" type="password" placeholder="Password" />
+            <Input id="confirmpswd" type="password" placeholder="Confirm Password" />
           </>
         ) : (
           <>
-            <Input type="email" placeholder="Email" />
-            <Input type="password" placeholder="Password" />
+            <Input id="email" type="email" placeholder="Email" />
+            <Input id="pswd" type="password" placeholder="Password" />
           </>
         )}
         <button>{formType === "signup" ? "Sign up" : "Sign in"}</button>
@@ -37,11 +38,11 @@ const Sidebar = ({ formType }) => {
         <h4>
           {formType === "signup" ? (
             <>
-              Already have an account? <span>Sign in</span>
+              Already have an account? <span><Link to={"/signin"}>Sign in</Link></span>
             </>
           ) : (
             <>
-              New to CareBridge? <span>Sign up</span> here.
+              New to CareBridge? <span><Link to={"/signup"}>Sign up</Link></span> here.
             </>
           )}
         </h4>
