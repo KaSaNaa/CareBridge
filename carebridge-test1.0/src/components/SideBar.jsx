@@ -1,8 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
 import Input from "./Input";
 
+// eslint-disable-next-line react/prop-types
 const Sidebar = ({formType}) => {
   return (
     <Container>

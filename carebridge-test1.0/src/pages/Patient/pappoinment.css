@@ -1,0 +1,22 @@
+.page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the start */
+  }
+  
+  .com1 {
+    width: 125px;
+    margin-right: 5px; /* Adjust margin to minimize the gap */
+  }
+  
+  .com2 {
+    width: 315px;
+    margin-left: 5px;
+    margin-right: 5px; /* Adjust margin to minimize the gap */
+  }
+  
+  .com3 {
+    margin-top: 50px;
+    flex-grow: 1; /* Allow the component to take remaining space */
+  }
+  
