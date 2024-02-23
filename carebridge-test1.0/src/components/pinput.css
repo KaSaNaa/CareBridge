@@ -82,5 +82,26 @@
     max-width: auto; /* Adjust as needed */
     margin: auto; /* Center the form horizontally */
   }
-  
-  
+  .select-doc{
+    text-align:left;
+    margin-left: 30px;
+  }
+  .select-doc-btn{
+    border: none;
+    border-radius: 7px;
+    padding: 20px;
+    width: auto;
+    cursor: pointer;
+    text-align: center;
+    background-color: aquamarine;
+  }
+  .select-doc-btn:hover{
+    background-color: lightblue;
+  }
+  .select-doc-btn a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: larger;
+    font-size: 20px;
+  }

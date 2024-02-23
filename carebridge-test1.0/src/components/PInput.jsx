@@ -76,8 +76,10 @@ export default function PInput() {
               <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} />
             </div>
           </div>
-          
         </div>
+        <div className="select-doc">
+          <button className="select-doc-btn"><a href="select-doc">Select Doctors</a></button>
+          </div>
         <button className="button1" type="submit">Book Appoinment</button>
       </form>
     </div>
