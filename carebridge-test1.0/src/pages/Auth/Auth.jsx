@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import bgImg from '../../assets/bg.svg';
-import Sidebar from '../../components/SideBar';
-import WeCare from '../../components/WeCare';
+import Sidebar from '../../components/Auth/SideBar';
+import WeCare from '../../components/Auth/WeCare';
 
-const Auth = ({inORup}) => {
+const Auth = ({ inORup }) => {
   return (
     <Container>
       <Wrapper>

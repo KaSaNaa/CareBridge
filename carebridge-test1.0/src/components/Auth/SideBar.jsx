@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../assets/logo.svg";
+import logo from '../../assets/logo.svg';
 import Input from "./Input";
 import { Link } from "react-router-dom";
+import { colors } from "../../assets/colorPalette";
 
 const Sidebar = ({ formType }) => {
   return (
@@ -78,15 +79,15 @@ const Form = styled.form`
     margin: 1rem 0;
     box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    background-color: #006878;
-    color: #ffffff;
+    background-color: ${colors.Prim};
+    color: ${colors.onTrinity};
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease-in;
 
     &:hover {
       transform: translateY(-3px);
-      background-color: #0191a8;
+      background-color: ${colors.Ter};
     }
   }
 `;
