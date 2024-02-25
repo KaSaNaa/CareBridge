@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './pinput.css';
 
-export default function PInput() {
+export default function PInput({handleClick, item}) {
   const [formData, setFormData] = useState({
     name: '',
     telephone: '',
@@ -42,6 +42,10 @@ export default function PInput() {
     }));
   };
 
+  useEffect(()=>{
+    console.log(item)
+  }, [])
+
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
@@ -77,9 +81,6 @@ export default function PInput() {
             </div>
           </div>
         </div>
-        <div className="select-doc">
-          <button className="select-doc-btn"><a href="select-doc">Select Doctors</a></button>
-          </div>
         <button className="button1" type="submit">Book Appoinment</button>
       </form>
     </div>

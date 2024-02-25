@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { items } from "./Doctors";
 import "./doctorstyle.css";
 
-export default function MultiFilters() {
+// eslint-disable-next-line react/prop-types
+export default function MultiFilters({handleClick}) {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [filteredItems, setFilteredItems] = useState(items);
 
@@ -36,7 +37,9 @@ export default function MultiFilters() {
   const handleItemClick = (item) => {
     // Navigate to the appointment page using React Router or any navigation library
     // Example: history.push(`/appointment/${item.name}`);
-    console.log("Navigating to appointment page for", item.name);
+    // console.log("Navigating to appointment page for", item.name);
+    handleClick({'component': 'PInput', 'item': item})
+    // handleClick('PInput')
   };
 
   return (
@@ -55,10 +58,10 @@ export default function MultiFilters() {
         ))}
       </div>
 
-      <a href="/appointment" className="item-container">
+      <a className="item-container">
         <div className="items-container">
           {filteredItems.map((item, idx) => (
-            <div key={`items-${idx}`} className="item" onClick={() => handleItemClick(item)}>
+            <div key={`items-${idx}`} className="item" onClick={() => handleItemClick(item.id)}>
               <p>{item.name}</p>
               <p className="category">{item.category}</p>
             </div>

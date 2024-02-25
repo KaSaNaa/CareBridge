@@ -19,11 +19,11 @@ const App = () => {
       {/* <Signup /> */}
 
       {/* <PSideBar/> */}
-      {/* <PAppoinment/> */}
+      <PAppoinment/>
       {/* <PInput/> */}
       
       {/* <Card/> */}
-      <MultiFilters/>
+      {/* <MultiFilters/> */}
 
     </div>
   )
