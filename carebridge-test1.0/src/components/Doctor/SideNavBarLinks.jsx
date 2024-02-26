@@ -14,6 +14,7 @@ const SideBarButton = ({ onClick, icon, title }) => {
 };
 
 const ButtonSidebar = styled.button`
+
   position: relative;
   width: 100%;
   
