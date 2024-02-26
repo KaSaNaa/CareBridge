@@ -1,21 +1,23 @@
 import React from "react";
 import styled from "styled-components"; // Import styled-components only once
-import SideBarButton from "./NavBarLinks";
+import SideBarButton from "./SideNavBarLinks";
 
 import { colors } from "../../assets/colorPalette";
 import dashboard from "../../assets/dashboard.svg";
 import patient from "../../assets/patient.svg";
-import messages from "../../assets/messages.svg";
 import visits from "../../assets/visits.svg";
+import appointments from "../../assets/appointments.svg";
 
-const Navbar = () => {
+const SideNavbar = ({onSideNavBarClick}) => {
+    const handleClick = (page) => {
+        onSideNavBarClick(page)
+    }
     return (
         <SidebarWrapper>
             <SidebarBody>
                 <UnorderedList>
                     {makeButtons.map((btn, i) => (
-                        <SideBarButton
-                            to={btn.to}
+                        <SideBarButton onClick = {() => handleClick(btn.title)}
                             icon={btn.icon}
                             title={btn.title}
                             key={i}
@@ -29,24 +31,20 @@ const Navbar = () => {
 
 const makeButtons = [
     {
-        to: "/",
         icon: <img src={dashboard} alt="dashboard" />,
         title: "Dashboard",
     },
     {
-        to: "/patients",
         icon: <img src={patient} alt="patient" />,
         title: "Patients",
     },
     {
-        to: "/appointments",
-        icon: <img src={visits} alt="visits" />,
+        icon: <img src={visits} alt="appointments" />,
         title: "Appointments",
     },
     {
-        to: "/messages",
-        icon: <img src={messages} alt="messages" />,
-        title: "Messages",
+        icon: <img src={appointments} alt="messages" />,
+        title: "Visits",
     },
 ];
 
@@ -80,4 +78,4 @@ const UnorderedList = styled.ul`
   width: 100%;
 `;
 
-export default Navbar;
+export default SideNavbar;
