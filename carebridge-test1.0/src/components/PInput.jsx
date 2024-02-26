@@ -1,8 +1,23 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import './pinput.css';
+import { initializeApp } from "firebase/app";
+import { getFirestore, addDoc, collection } from "firebase/firestore"; 
 
-export default function PInput({handleClick, item}) {
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyB6F_p2pV2x_PZgn-uujS4cw4wL7B_LUyQ",
+  authDomain: "chanel-7de94.firebaseapp.com",
+  projectId: "chanel-7de94",
+  storageBucket: "chanel-7de94.appspot.com",
+  messagingSenderId: "483251603039" ,
+  appId: "1:483251603039:web:03b9992b3b6fbf06c4bdea"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+export default function PInput({ handleClick, item }) {
   const [formData, setFormData] = useState({
     name: '',
     telephone: '',
@@ -15,20 +30,8 @@ export default function PInput({handleClick, item}) {
     event.preventDefault();
 
     try {
-      const response = await fetch('/api/submitData', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (response.ok) {
-        // Data successfully submitted
-        console.log('Data submitted successfully');
-      } else {
-        console.error('Failed to submit data');
-      }
+      await addDoc(collection(db, "appointments"), formData);
+      console.log('Data submitted successfully');
     } catch (error) {
       console.error('Error submitting data:', error);
     }
@@ -81,7 +84,7 @@ export default function PInput({handleClick, item}) {
             </div>
           </div>
         </div>
-        <button className="button1" type="submit">Book Appoinment</button>
+        <button className="button1" type="submit">Book Appointment</button>
       </form>
     </div>
   );

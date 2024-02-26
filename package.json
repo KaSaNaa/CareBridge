@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "@firebase/firestore": "^4.4.2",
+    "firebase": "^10.8.0",
     "react-router-dom": "^6.22.1"
   }
 }

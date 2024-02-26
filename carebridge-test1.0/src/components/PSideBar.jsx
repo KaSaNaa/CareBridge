@@ -16,7 +16,7 @@ export default function PSideBar() {
       <div className="icon-container">
         <img src={profile} alt="profile icon" />
       </div>
-      <a href="Dashboard">Profile</a>
+      <a href="profile">Profile</a>
     </li>
     <li>
       <div className="icon-container">
