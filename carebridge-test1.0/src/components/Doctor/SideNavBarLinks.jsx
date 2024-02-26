@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import { colors } from '../../assets/colorPalette' // Assuming you have a file for colors
+import React from "react";
+import styled from "styled-components";
+import { colors } from "../../assets/colorPalette"; // Assuming you have a file for colors
 
 const SideBarButton = ({ onClick, icon, title }) => {
   return (
@@ -14,10 +14,9 @@ const SideBarButton = ({ onClick, icon, title }) => {
 };
 
 const ButtonSidebar = styled.button`
-
   position: relative;
   width: 100%;
-  
+
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -43,11 +42,11 @@ const ButtonSidebar = styled.button`
     transition: all 0.4s ease-in-out;
     font-weight: 500;
   }
-`
+`;
 
 const Icon = styled.div`
   margin-right: 15px;
   margin-left: 20px;
   height: 24px;
-`
+`;
 export default SideBarButton;

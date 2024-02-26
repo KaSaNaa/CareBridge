@@ -36,7 +36,7 @@ const ContentWrapper = styled.div`
 `;
 
 const SideBarWrapper = styled.div`
-  width: 100%;
+  width: 100;
 `;
 
 export default DoctorsUI;
