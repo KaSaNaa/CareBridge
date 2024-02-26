@@ -1,21 +1,21 @@
-import React from "react";
-import styled from "styled-components";
-import { colors } from "../../assets/colorPalette"; // Assuming you have a file for colors
-import { NavLink } from "react-router-dom";
+import React from 'react'
+import styled from 'styled-components'
+import { colors } from '../../assets/colorPalette' // Assuming you have a file for colors
 
-const SideBarButton = ({ to, icon, title }) => {
+const SideBarButton = ({ onClick, icon, title }) => {
   return (
     <li>
-      <NavLinks strict='true' to={{ pathname: to }}>
+      <ButtonSidebar onClick={onClick}>
         <Icon>{icon}</Icon>
         {title}
-      </NavLinks>
+      </ButtonSidebar>
     </li>
   );
 };
 
-const NavLinks = styled(NavLink)`
+const ButtonSidebar = styled.button`
   position: relative;
+  width: 100%;
   
   text-decoration: none;
   display: flex;
@@ -33,15 +33,16 @@ const NavLinks = styled(NavLink)`
 
   &:hover {
     background: ${colors.SurfContainer_highest};
+    font-weight: 400;
   }
 
   &.active {
     background: ${colors.secContainer};
     color: ${colors.onPrimContainer};
     transition: all 0.4s ease-in-out;
-    font-weight: 400;
+    font-weight: 500;
   }
-`;
+`
 
 const Icon = styled.div`
   margin-right: 15px;
