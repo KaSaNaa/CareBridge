@@ -1,0 +1,117 @@
+.p-mid-main-container{
+    display: grid;
+    
+
+    
+}
+.div-heading{
+    background-color: aqua;
+    border-color: rgba(0, 0, 0, 0.212);
+    border-style: solid;
+    border-radius: 30px 0px 0px 0px;
+    padding: 10px;
+}
+.p-head{
+    padding: 10px;
+    
+}
+.div-mid-main{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    
+    gap: 10px;
+
+}
+.div-mid-input{
+background-color: rgb(129, 35, 118);
+}
+
+.div-mid-input {
+    max-width: 50%;
+    margin: 0 ;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+  }
+ 
+
+  .div-mid-input label {
+    font-weight: bold;
+    width: 100px; /* Fixed width for labels */
+    margin-right: 10px;
+  }
+  
+  .div-mid-input input[type="text"],
+  .div-mid-input input[type="date"] {
+    flex: 1; /* Let input fields take remaining space */
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .div-mid-input input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  .div-mid-input .radio-label {
+    margin-right: 15px;
+  }
+  
+  .div-mid-input .form-group {
+    display: flex;
+    align-items: center; /* Align label and input vertically */
+    margin-bottom: 15px;
+  }
+  
+  .div-mid-input .form-group:last-child {
+    margin-bottom: 0;
+  }
+  .div-mid-input-al {
+    background-color: rgb(29, 159, 103);
+    max-width: 80%; /* Adjusted max-width for better responsiveness */
+    margin: 0 ; /* Center the form horizontally */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for aesthetics */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  }
+  
+  .input-h3 {
+    padding: 10px;
+    color: white; /* Changed text color to white for better visibility */
+    text-align: center; /* Center align heading */
+  }
+  
+  .alergies-input-li {
+     /* Remove default list styling */
+    padding: 0;
+  }
+  
+  .alergies-input-li li {
+    margin-bottom: 10px; /* Add space between input fields */
+  }
+  
+  .alergies-input-li li input[type="text"] {
+    width: 100%; /* Make input fields fill their parent container */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .btn-save{
+    padding: 20px;
+
+  }
+  .btn-logout{
+    padding: 20px;
+
+  }
+  .btn-dlt{
+    padding: 20px;
+  }

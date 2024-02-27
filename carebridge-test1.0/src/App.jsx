@@ -7,6 +7,7 @@ import PAppoinment from './pages/Patient/PAppoinment.jsx';
 import PInput from './components/PInput.jsx';
 import MultiFilters from './components/Mulrifilter.jsx';
 import PProfileCMP1 from './components/PProfileCMP1.jsx';
+import PProfileCMP2 from  './components/PProfileCMP2.jsx';
 const App = () => {
   return (
     <div>
@@ -15,7 +16,8 @@ const App = () => {
       {/* <PSideBar/> */}
       {/* <PAppoinment/> */}
       {/* <PInput/> */}
-      <PProfileCMP1/>
+      {/* <PProfileCMP1/> */}
+      <PProfileCMP2/>
       {/* <Card/> */}
       {/* <MultiFilters/> */}
 
