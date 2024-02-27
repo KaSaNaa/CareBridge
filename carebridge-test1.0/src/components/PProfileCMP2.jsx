@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import './pprofileCMP2.css';
 export default function PProfileCMP2() {
@@ -17,10 +18,10 @@ export default function PProfileCMP2() {
                         <label htmlFor="last-name">Last Name</label>
                         <input type="text" id="last-name" placeholder="Damsinghe" />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group-gender">
                         <label>Select Gender</label>
-                        <label className="radio-label"><input type="radio" name="gender" value="male" />Male</label>
-                        <label className="radio-label"><input type="radio" name="gender" value="female" />Female</label>
+                        <label className="radio-lbl"><input type="radio" name="gender" value="male" />Male</label>
+                        <label className="radio-lbl"><input type="radio" name="gender" value="female" />Female</label>
                     </div>
                     <div className="form-group">
                         <label htmlFor="phone">Phone Number</label>
@@ -71,11 +72,17 @@ export default function PProfileCMP2() {
             </div>
         </div>
         <div className="btn-div">
+            
+            <button className="btn-dlt">Delete profile</button>
+            <div className="down-btn">
             <button className="btn-save">Save</button>
             <button className="btn-logout">Log Out</button>
-            <button className="btn-dlt">Delete profile</button>
+            </div>
         </div>
     </div>
     
   )
 }
+
+
+// bbbb

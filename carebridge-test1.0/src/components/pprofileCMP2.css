@@ -1,117 +1,130 @@
-.p-mid-main-container{
-    display: grid;
-    
-
-    
-}
-.div-heading{
-    background-color: aqua;
-    border-color: rgba(0, 0, 0, 0.212);
-    border-style: solid;
-    border-radius: 30px 0px 0px 0px;
-    padding: 10px;
-}
-.p-head{
-    padding: 10px;
-    
-}
-.div-mid-main{
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: row;
-    
-    gap: 10px;
-
-}
-.div-mid-input{
-background-color: rgb(129, 35, 118);
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.div-mid-input {
-    max-width: 50%;
-    margin: 0 ;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-  }
- 
+/* Container Styles */
+.p-mid-main-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout */
+  gap: 20px;
+  max-width: 100%;
+  margin: 0px;
+  padding: 20px;
+  
+}
 
-  .div-mid-input label {
-    font-weight: bold;
-    width: 100px; /* Fixed width for labels */
-    margin-right: 10px;
-  }
+/* Header Styles */
+.div-heading {
   
-  .div-mid-input input[type="text"],
-  .div-mid-input input[type="date"] {
-    flex: 1; /* Let input fields take remaining space */
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .div-mid-input input[type="radio"] {
-    margin-right: 5px;
-  }
-  
-  .div-mid-input .radio-label {
-    margin-right: 15px;
-  }
-  
-  .div-mid-input .form-group {
-    display: flex;
-    align-items: center; /* Align label and input vertically */
-    margin-bottom: 15px;
-  }
-  
-  .div-mid-input .form-group:last-child {
-    margin-bottom: 0;
-  }
-  .div-mid-input-al {
-    background-color: rgb(29, 159, 103);
-    max-width: 80%; /* Adjusted max-width for better responsiveness */
-    margin: 0 ; /* Center the form horizontally */
-    padding: 20px;
-    border-radius: 10px; /* Rounded corners for aesthetics */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-  }
-  
-  .input-h3 {
-    padding: 10px;
-    color: white; /* Changed text color to white for better visibility */
-    text-align: center; /* Center align heading */
-  }
-  
-  .alergies-input-li {
-     /* Remove default list styling */
-    padding: 0;
-  }
-  
-  .alergies-input-li li {
-    margin-bottom: 10px; /* Add space between input fields */
-  }
-  
-  .alergies-input-li li input[type="text"] {
-    width: 100%; /* Make input fields fill their parent container */
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  
-  .btn-save{
-    padding: 20px;
+  border-radius: 30px 30px 0 0;
+  padding: 20px;
+  color: rgb(29, 217, 217);
+  border: rgba(128, 128, 128, 0.375) solid thin;
+}
 
-  }
-  .btn-logout{
-    padding: 20px;
+.p-head {
+  margin: 0;
+}
 
-  }
-  .btn-dlt{
-    padding: 20px;
-  }
+/* Main Content Styles */
+.div-mid-main {
+  background-color: #fff;
+  border-radius: 0 0 30px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px;
+}
+
+.div-mid-input,
+.div-mid-input-al {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+.div-mid-input label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.div-mid-input input[type="text"],
+.div-mid-input input[type="date"],
+.div-mid-input-al .alergies-input-li li input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.div-mid-input .form-group {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 10px;
+}
+.form-group-gender{
+  display: flex;
+  flex-direction: row;
+  gap: 58px;
+  align-items: end;
+  
+  
+
+}
+.radio-lbl{
+  margin-right: 10px;
+}
+
+.form-group .radio-label {
+  display: inline-block;
+  margin-right: 10px;
+}
+.div-mid-input-al .alergies-input-li {
+  list-style-type: none;
+  padding: 0;
+}
+
+.div-mid-input-al .alergies-input-li li {
+  margin-bottom: 10px;
+}
+
+/* Button Styles */
+.btn-save,
+.btn-logout,
+.btn-dlt {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: rgba(10, 248, 18, 0.695);
+  color: rgb(10, 73, 26);
+}
+
+.btn-logout {
+  background-color: grey;
+  color: #fff;
+}
+
+.btn-dlt {
+  background-color: rgba(255, 0, 0, 0.713);
+  color: #fff;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.down-btn {
+  display: flex;
+  gap: 20px;
+}

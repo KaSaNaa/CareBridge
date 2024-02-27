@@ -1,0 +1,24 @@
+.main-p-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    overflow:scroll;/* Align items to the start */
+  }
+  
+  .p-cmp-1 {
+    width: 125px;
+    margin-right: 5px; /* Adjust margin to minimize the gap */
+  }
+  
+  .p-cmp-2 {
+    width: 315px;
+    margin-left: 5px;
+    margin-right: 5px; /* Adjust margin to minimize the gap */
+  }
+  
+  .p-cmp-3{
+    margin-left: 0px;
+    margin-top: 0px;
+    flex-grow: 1; /* Allow the component to take remaining space */
+  }
+  
