@@ -28,15 +28,18 @@ const DoctorsUI = () => {
 
 const DoctorUIContainer = styled.div`
   display: flex;
-`;
-
-const ContentWrapper = styled.div`
-  display: flex;
-  padding: 20px;
+  height: 100vh;
 `;
 
 const SideBarWrapper = styled.div`
-  width: 100;
+  width: 250px; // Adjust as needed
+`;
+
+const ContentWrapper = styled.div`
+  flex: 1; // Take remaining space
+  overflow-y: auto;  // Enable vertical scrolling if content exceeds height
+  overflow-x: auto;
+  max-width: calc(100% - 250px); // Subtract sidebar width // Push content to the right: ;
 `;
 
 export default DoctorsUI;

@@ -4,6 +4,7 @@ import PatientsPage from "../../pages/Doctor/Patients";
 import VisitsPage from "../../pages/Doctor/Visits";
 import AppointmentsPage from "../../pages/Doctor/Appointments";
 import styled from "styled-components";
+import { colors } from "../../assets/colorPalette";
 
 const Content = ({ selectedPage }) => {
   const renderPage = () => {
@@ -26,7 +27,8 @@ const Content = ({ selectedPage }) => {
 };
 
 const ContentContainer = styled.div`
-  display: flex;
-  padding: 20px;
+  overflow: auto;
+  margin-left: auto; //Push content to the right
 `;
+
 export default Content;

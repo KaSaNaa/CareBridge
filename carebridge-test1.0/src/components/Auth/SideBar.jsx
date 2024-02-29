@@ -5,7 +5,7 @@ import Input from "./Input";
 import { Link } from "react-router-dom";
 import { colors } from "../../assets/colorPalette";
 
-const Sidebar = ({ formType }) => {
+const SideBar = ({ formType }) => {
   return (
     <Container>
       <LogoWrapper>
@@ -140,4 +140,4 @@ const Container = styled.div`
   }
 `;
 
-export default Sidebar;
+export default SideBar;
