@@ -1,7 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import './pprofileCMP2.css';
+// import LogoutConfo from './LogoutConfo.jsx';
+
+
 export default function PProfileCMP2() {
+
+    
+
+
   return (
     <div className="p-mid-main-container">
             <div className="div-heading">
@@ -76,7 +83,7 @@ export default function PProfileCMP2() {
             <button className="btn-dlt">Delete profile</button>
             <div className="down-btn">
             <button className="btn-save">Save</button>
-            <button className="btn-logout">Log Out</button>
+            <button className="btn-logout" >Log Out</button> 
             </div>
         </div>
     </div>
