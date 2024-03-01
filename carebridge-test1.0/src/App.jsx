@@ -1,20 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import DeleteProfile from './components/DeleteProfile.jsx';
-// import PAppoinment from './pages/Patient/PAppoinment.jsx';
-// import Profile from './pages/Patient/Profile.jsx';
-// import LogoutConfo from './components/LogoutConfo.jsx';
-const App = () => {
+//import Profile from './pages/Patient/Profile.jsx';
+// import MainHome from './pages/Home/MainHome.jsx';
+import Com1 from './components/Home/Com1.jsx';
+
+
+export default function App() {
   return (
     <div>
-      {/* <PAppoinment/>*/}
-      {/* <Profile/> */}
-      {/* <LogoutConfo/> */}
-      <DeleteProfile/>
-
+     <Com1/>
+      
     </div>
   )
 }
-
-export default App;
-
