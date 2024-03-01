@@ -1,106 +1,121 @@
 import React from "react";
 import styled from "styled-components";
 
-function DoctorDetailsForm() {
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [passwordInvalid, setPasswordInvalid] = React.useState(false);
-  const [enabled, setEnabled] = React.useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // validate password and set passwordInvalid state accordingly
-    if (password.length < 8) {
-      setPasswordInvalid(true);
-    } else {
-      setPasswordInvalid(false);
-    }
-  };
-
-  const usernameEntered = (e) => {
-    setUsername(e.target.value);
-    // buttonEnabled(username, password)
-  };
-
-  const passwordEntered = (e) => {
-    setPassword(e.target.value);
-    // buttonEnabled(username, password)
-  };
-
-  const buttonEnabled = (username, password) => {
-    if (username.length > 0 && password.length > 0) {
-      setEnabled(true);
-    } else {
-      setEnabled(false);
-    }
-  };
-
+const DoctorDetailsForm = () => {
   return (
-    <StyledForm onSubmit={handleSubmit}>
-      <StyledLabel>Username:</StyledLabel>
-      <StyledInput
-        type="text"
-        value={username}
-        onChange={(e) => usernameEntered(e)}
-      />
-      <StyledLabel invalid={passwordInvalid}>Password:</StyledLabel>
-      <StyledInput
-        type="password"
-        value={password}
-        onChange={(e) => passwordEntered(e)}
-      />
-      {passwordInvalid && <StyledAlert>Password is invalid.</StyledAlert>}
-      <StyledButton type="submit" disabled={!username || !password}>
-        Login
-      </StyledButton>
-    </StyledForm>
+    <FormWrapper>
+      <Form>
+        <Field>
+          <FieldName>First Name</FieldName>
+          <StyledInput type="text" name="name" />
+        </Field>
+
+        <Field>
+          <FieldName>Last Name</FieldName>
+          <StyledInput type="text" name="name" />
+        </Field>
+
+        <Field>
+          <FieldName>Gender</FieldName>
+          <GenderWrapper>
+            <StyledInput type="radio" id="male" name="gender" value="male" />
+            <RadioLabel htmlFor="choice1">Male</RadioLabel>
+            <StyledInput
+              type="radio"
+              id="female"
+              name="gender"
+              value="female"
+            />
+            <RadioLabel htmlFor="choice2">Female</RadioLabel>
+          </GenderWrapper>
+        </Field>
+
+        <Field>
+          <FieldName>Email</FieldName>
+          <StyledInput type="email" name="email" />
+        </Field>
+
+        <Field>
+          <FieldName>Contact Number</FieldName>
+          <StyledInput type="tel" name="contact" />
+        </Field>
+
+        <Field>
+          <FieldName>Address</FieldName>
+          <StyledInput type="address" name="address" />
+        </Field>
+
+        <Field>
+          <FieldName>Date of Birth</FieldName>
+          <StyledInput type="date" name="dob" />
+        </Field>
+
+        <Field>
+          <FieldName>Office Hours</FieldName>
+          <StyledInput type="Text" name="hours" />
+        </Field>
+
+        <Field>
+          <FieldName> Professional Qualification </FieldName>
+          <StyledInput type='text' name="Professional Qualification"/> 
+        </Field>
+      </Form>
+    </FormWrapper>
   );
-}
+};
 
 export default DoctorDetailsForm;
 
-const StyledForm = styled.form`
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-radius: 5px;
+const GenderWrapper = styled.div`
+  // Add a wrapper for radio buttons
+  display: flex;
+  align-items: center;
 `;
 
-const StyledLabel = styled.label`
-  /* display: block; */
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: ${(props) => (props.invalid ? "red" : "black")};
+const FormWrapper = styled.div`
+  background-color: #ffffff; /* Set background color to white */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column; /* Change direction to column for vertical layout */
+`;
+
+const Field = styled.label`
+  margin-bottom: 15px; /* Add bottom margin for spacing between labels */
+  color: #000000; /* Set label text color to black */
 `;
 
 const StyledInput = styled.input`
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 10px; /* Add padding for input fields */
+  border: 1px solid #cccccc; /* Add border for input fields */
+  border-radius: 15px; /* Add border radius for rounded corners */
+  margin-top: 5px; /* Add top margin for spacing */
+  width: 90%;
+  height: 10px;
+  box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
+  font-family: "Inter";
+
+  // apply default css for input type = radio
+  &[type="radio"] {
+    margin-left: 50px; /* Add right margin for spacing between radio buttons */
+  }
 `;
 
-const StyledButton = styled.button`
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  &:disabled {
-    opacity: 0.5;
-  }
-  &:enabled {
-    opacity: 1;
-  }
-  opacity: ${(props) => (!props.enabled ? 0.5 : 1)};
+const FieldName = styled.label`
+  font-weight: 600;
+  margin: 10px;
+  margin-left: auto;
+  font-family: "Inter";
 `;
 
-const StyledAlert = styled.div`
-  padding: 10px;
-  background-color: #f44336;
-  color: white;
-  margin-top: 10px;
-  border-radius: 5px;
+const RadioLabel = styled.label`
+  margin: 10px;
+  margin-right: 50px;
+  color: grey;
+  font-weight: 400;
+  font-family: "Inter";
 `;

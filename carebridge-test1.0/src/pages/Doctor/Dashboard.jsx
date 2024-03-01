@@ -4,6 +4,7 @@ import { colors } from "../../assets/colorPalette";
 import DPCard from "../../components/Doctor/DPCard";
 import DetailswithTitleCard from "../../components/Doctor/DetailswithTitleCard";
 import DoctorDetailsForm from "../../components/Doctor/DoctorDetailsForm";
+import ChangePswd from "../../components/Doctor/ChangePswd";
 
 const Dashboard = () => {
   return (
@@ -33,7 +34,7 @@ const Dashboard = () => {
           <DoctorDetailsForm/>
         </div>
         <div className="col3">
-          <h2>Column3</h2>
+          <ChangePswd/>
         </div>
       </ColumnWrapper>
     </DashboardWrapper>
