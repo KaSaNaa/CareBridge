@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { colors } from "../../assets/colorPalette";
 
 const ChangePswd = () => {
   return (
@@ -20,8 +21,21 @@ const ChangePswd = () => {
           <input type="password" id="confirmPswd" name="confirmPswd" />
         </Field>
         <CenterButton>
-          <button type="submit">Change Password</button>
+          <PswdBtn type="submit">Change Password</PswdBtn>
         </CenterButton>
+        <ButtonWrapper>
+          <Button className="edit">
+            <BtnText>Edit</BtnText>
+          </Button>
+
+          <Button className="save">
+            <BtnText>Save</BtnText>
+          </Button>
+
+          <Button className="cancel">
+            <BtnText>Cancel</BtnText>
+          </Button>
+        </ButtonWrapper>
       </Form>
     </Wrapper>
   );
@@ -29,10 +43,71 @@ const ChangePswd = () => {
 
 export default ChangePswd;
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 270px;
+  .save,
+  .cancel,
+  .edit {
+    margin: 10px;
+    padding: 10px;
+    padding-left: 14px;
+    padding-right: 15px;
+    color: ${colors.onTrinity};
+    border-radius: 10px;
+    border: 0 transparent;
+  }
+
+  .save{
+    background-color: ${colors.Prim};
+  }
+
+  .cancel{
+    background-color: ${colors.Surf};
+    color: ${colors.Prim};
+    border: 1px ${colors.Prim} solid;
+  }
+
+  .edit{
+    background-color: ${colors.Ter};
+  }
+`;
+
+const PswdBtn = styled.button`
+  width: 75%;
+  max-width: 350px;
+  min-width: 250px;
+  height: 40px;
+  border: none;
+  margin: 1rem 0;
+  box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  background-color: ${colors.onErrContainer};
+  color: ${colors.onTrinity};
+  margin-left: auto;
+
+  &:hover {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: ${colors.Err};
+  }
+`;
+
+const Button = styled.button``
+
+const BtnText = styled.p`
+  font-size: 15px;
+  font-weight: 500;
+  line-height: normal;
+  flex: 1;
+  align-self: stretch;
+  display: flex;
+`;
+
 const Wrapper = styled.div`
   display: flex;
-  font-family: "Inter";
-  background-color: #ffff;
+  background-color: ${colors.SurfContainer_low};
   padding: 20px;
   border-radius: 15px;
   flex-direction: column;
@@ -40,8 +115,7 @@ const Wrapper = styled.div`
   font-size: 0.8rem;
 
   h1 {
-    font-family: "Inter";
-    color: red;
+    color: ${colors.Prim};
     display: flex;
     font-size: 20px;
   }
@@ -50,11 +124,10 @@ const Line = styled.div`
   width: 100%;
   height: 2px;
   display: flex;
-  background-color: red;
+  background-color: ${colors.Prim};
   margin-bottom: 20px;
   margin-top: 10px;
   margin-left: 0.14px;
-  background-color: red;
 `;
 
 const Form = styled.form`
@@ -64,7 +137,6 @@ const Form = styled.form`
   label {
     margin-bottom: 15px;
     color: #000000;
-    font-family: "Inter";
   }
   input {
     padding: 10px;
@@ -74,33 +146,13 @@ const Form = styled.form`
     width: 90%;
     height: 10px;
     box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
-    font-family: "Inter";
-  }
-  button {
-    width: 75%;
-    max-width: 350px;
-    min-width: 250px;
-    height: 40px;
-    border: none;
-    font-family: "Inter";
-    margin: 1rem 0;
-    box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    background-color: #00bfff;
-    margin-left: auto;
-
-    &:hover {
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      background-color: lightgreen;
-    }
   }
 `;
 
 const Field = styled.div`
-    margin: 5px;
+  margin: 5px;
 `;
 
 const CenterButton = styled(Field)`
-    margin: auto;
-`
+  margin: auto;
+`;

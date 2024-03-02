@@ -47,14 +47,13 @@ const Header = styled.header`
   display: flex;
   flex-direction: row-reverse;
   color: aliceblue;
-  background-color: blue;
+  background-color: ${colors.Prim};
   align-items: end;
   padding: 10px;
   border-radius: 10px 0px 0px 0px;
 `;
 
 const DashboardWrapper = styled.div`
-  background-color: ${colors.Err};
   top: 10%;
   height: 100%;
   padding: 0px;
@@ -72,7 +71,8 @@ const ColumnWrapper = styled.div`
   .col3 {
     width: 99%;
     padding: 1rem;
-    background-color: black;
+    background-color: ${colors.SurfContainer_low};
+    border: 1px  solid #ddd;
     color: white;
     border-radius: 10px;
   }

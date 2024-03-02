@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { colors } from "../../assets/colorPalette";
 
 const DoctorDetailsForm = () => {
   return (
@@ -73,7 +74,7 @@ const GenderWrapper = styled.div`
 `;
 
 const FormWrapper = styled.div`
-  background-color: #ffffff; /* Set background color to white */
+  background-color: ${colors.SurfContainer_low};
   padding: 20px; /* Add padding for spacing */
   border-radius: 10px; /* Add border radius for rounded corners */
   
@@ -97,7 +98,6 @@ const StyledInput = styled.input`
   width: 90%;
   height: 10px;
   box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
-  font-family: "Inter";
 
   // apply default css for input type = radio
   &[type="radio"] {
@@ -109,7 +109,7 @@ const FieldName = styled.label`
   font-weight: 600;
   margin: 10px;
   margin-left: auto;
-  font-family: "Inter";
+  color: ${colors.Prim};
 `;
 
 const RadioLabel = styled.label`
@@ -117,5 +117,4 @@ const RadioLabel = styled.label`
   margin-right: 50px;
   color: grey;
   font-weight: 400;
-  font-family: "Inter";
 `;

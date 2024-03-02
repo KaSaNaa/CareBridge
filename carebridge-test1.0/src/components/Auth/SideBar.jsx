@@ -100,13 +100,11 @@ const LogoWrapper = styled.div`
   h3 {
     color: #006878;
     text-align: center;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 
   span {
     color: #6d5389;
     text-align: center;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 `;
 
@@ -140,4 +138,4 @@ const Container = styled.div`
   }
 `;
 
-export default SideBar;
+export default SideBar
