@@ -2,14 +2,14 @@
 import React from 'react'
 //import Profile from './pages/Patient/Profile.jsx';
 // import MainHome from './pages/Home/MainHome.jsx';
-import Com1 from './components/Home/Com1.jsx';
-
+import Com4 from './components/Home/Com4.jsx';
+import TitleCom from './components/Home/TitleCom.jsx'
 
 export default function App() {
   return (
     <div>
-     <Com1/>
-      
+     <Com4/>
+      {/* <TitleCom/> */}
     </div>
   )
 }

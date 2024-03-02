@@ -1,0 +1,36 @@
+.com3-main-con{
+    background-color: #DFE6EC;
+}
+.com3-part1{
+    
+}
+.com3-part2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+
+.com3-part2-main{
+    padding-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .com3-part2 {
+        flex-direction: column; /* Change to column layout on smaller screens */
+        align-items: center; /* Center align items */
+        margin-left: 0; /* Remove left margin */
+        margin-right: 0; /* Remove right margin */
+    }
+}
+
+/* Additional media query for smaller screens */
+@media screen and (max-width: 480px) {
+    .com3-part2-main {
+        padding-bottom: 20px; /* Decrease padding bottom further for smaller screens */
+    }
+}

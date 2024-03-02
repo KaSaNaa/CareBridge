@@ -1,0 +1,120 @@
+.home-com2-con {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.com2-part1 {
+    margin-top: 50px;
+}
+
+.com2-part2 {
+    text-align: center;
+    padding-top: 38px;
+}
+
+.img-read {
+    width: 60%; /* Adjusted width */
+    height: auto; /* Ensures aspect ratio is maintained */
+    border-radius: 10px;
+}
+
+.com2-part3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.small-h3 {
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.small-para-art {
+    font-size: 15px;
+    padding: 10px;
+    margin: 3px;
+    margin-left: 5%; /* Adjusted margin */
+}
+
+.img-tick {
+    width: 19px;
+    height: 19px;
+    margin-right: 20px;
+    text-align: center;
+    justify-content: center;
+    
+
+}
+
+.sml-table {
+    padding: 10px;
+    margin-left: 5%; /* Adjusted margin */
+    /* border: black; add border to table */
+    /* background-color: aquamarine; */
+    
+}
+
+.tr1 , .tr2 {
+   display: flex;
+   flex-direction: row;
+   gap: 50px;
+   text-align: center;
+   margin-left: 20px;
+   align-items: center;
+   
+
+}
+
+.tr2{
+    margin-top: 30px;
+}
+
+.td1{
+    display: flex;
+}
+
+.td2{
+    display: flex;
+    margin-left:13px ;
+}
+
+
+
+.sml-con-btn1 {
+    width: 80%; /* Adjusted width */
+    height: 50px;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: rgb(69, 195, 153);
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.div-btn-cls {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (min-width: 768px) {
+    .small-para-art {
+        margin-left: 30px; /* Reset to original value for larger screens */
+    }
+    .sml-table {
+        margin-left: 50px; /* Reset to original value for larger screens */
+    }
+    .sml-con-btn1 {
+        width: 160px; /* Reset to original value for larger screens */
+    }
+}

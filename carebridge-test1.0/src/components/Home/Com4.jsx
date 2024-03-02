@@ -4,7 +4,12 @@ import './com4.css';
 
 export default function Com4() {
   return (
-    <div>
+    <div className='com4-main-con'>
+      <div className="co4-part1"> 
+      </div>
+      <div className="com4-part2">
+        
+      </div>
       
     </div>
   )
