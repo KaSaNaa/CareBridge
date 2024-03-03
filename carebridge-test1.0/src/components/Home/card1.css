@@ -1,0 +1,43 @@
+.card1-com{
+    display: flex;
+    flex-direction: column;
+    width: 303px;
+    height: 419px;
+    align-items: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.14);
+    border: 1px solid rgba(0, 0, 0, 0.112);
+    margin: 20px;
+}
+
+
+.card1-img{
+    width:205px;
+    height: 220.33px;
+    margin-bottom: 30px;
+    padding: 10px;
+
+}
+.img-name{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    padding: 5px;
+}
+.decoy{
+    height: 1px;
+    background-color: black;
+    width: 55px;
+    margin-top: 4px;
+}
+.degree{
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    color: black;
+}
+.department{
+    padding: 5px;
+    font-weight: lighter;
+    color: black;
+    font-size: 15px;
+}

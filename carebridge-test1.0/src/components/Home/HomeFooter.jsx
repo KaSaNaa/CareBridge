@@ -4,7 +4,7 @@ import './homefooter.css';
 
 export default function HomeFooter() {
   return (
-    <div>
+    <div className="home-footer-main-con">
       
     </div>
   )

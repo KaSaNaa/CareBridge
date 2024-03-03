@@ -20,16 +20,16 @@ export default function Com3() {
       </div>
       <div className="com3-part2-main">
       <div className="com3-part2">
-        <Card img={icon1} title="Consulting" text="Expert advice at your fingertips online simplicity"/>
-        <Card img={icon1} title="Dental care" text="Smile brighter with our comprehensive dental care."/>
-        <Card img={icon1} title="Emergency Service" text="Urgent help when every second counts most."/>
-        <Card img={icon1} title="Test" text="Accurate diagnostics for informed and proactive care."/>
+        <Card img={icon6} title="Consulting" text="Expert advice at your fingertips online simplicity"/>
+        <Card img={icon4} title="Dental care" text="Smile brighter with our comprehensive dental care."/>
+        <Card img={icon2} title="Emergency Service" text="Urgent help when every second counts most."/>
+        <Card img={icon7} title="Test" text="Accurate diagnostics for informed and proactive care."/>
         </div>
         <div className="com3-part2">
         <Card img={icon1} title="Diabetic Tests" text="Precision testing for diabetes management and awareness."/>
-        <Card img={icon1} title="24/7 Support" text="Always here for you with 24/7 service."/>
-        <Card img={icon1} title="General Treatment" text="Comprehensive care for your well-being, tailored to you."/>
-        <Card img={icon1} title="Free Checkup" text="Receive a complimentary health checkup for free."/>
+        <Card img={icon5} title="24/7 Support" text="Always here for you with 24/7 service."/>
+        <Card img={icon8} title="General Treatment" text="Comprehensive care for your well-being, tailored to you."/>
+        <Card img={icon3} title="Free Checkup" text="Receive a complimentary health checkup for free."/>
         </div>
         </div>
       

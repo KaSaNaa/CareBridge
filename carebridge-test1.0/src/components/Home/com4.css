@@ -1,3 +1,33 @@
-.com4-main-con{
-    background-image: ;
+.com4-main-con {
+    position: relative;
+}
+
+
+.img-grp{
+margin-top: -180px;
+width: 100%;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%; /* Adjust top positioning as needed */
+    left: 70%; /* Adjust left positioning as needed */
+    transform: translate(-50%, -50%); /* Center the text vertically and horizontally */
+    text-align: center; /* Center align the text */
+    background-color: #8E8E8E; /* Add a semi-transparent background */
+    padding: 10px; /* Add padding to the text */
+    border-radius: 5px; /* Add some border radius for styling */
+    font-size: 14px; /* Adjust font size as needed */
+}
+
+.grp-head{
+
+    font-size: 22px;
+
+}
+
+.grp-para{
+    
+
+
 }

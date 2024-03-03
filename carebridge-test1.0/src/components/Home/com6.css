@@ -1,0 +1,20 @@
+.com6-main-con{
+    display: flex;
+    flex-direction: column;
+    padding:10px ;
+    background-color: #DFE6EC;
+    height: 700px;
+
+}
+
+.com6-part1{
+    margin-bottom: 40px;
+
+}
+
+.com6-part2{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+
+}

@@ -2,7 +2,7 @@
     background-image: url('../../assets/background.jpg');
     background-size: cover;
     background-position: center;
-    position: fixed;
+    /* position: fixed; */
     height: 80vh;
     width: 100%;
     display: flex;
