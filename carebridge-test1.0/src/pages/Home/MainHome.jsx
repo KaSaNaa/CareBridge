@@ -7,20 +7,21 @@ import Com2 from '../../components/Home/Com2.jsx';
 import Com3 from '../../components/Home/Com3.jsx';
 import Com4 from '../../components/Home/Com4.jsx';
 import Com5 from '../../components/Home/Com5.jsx';
-import Com6 from '../../components/Home/Com6.jsx'
+import Com6 from '../../components/Home/Com6.jsx';
+import HomeFooter from '../../components/Home/HomeFooter';
 
 export default function MainHome() {
   return (
     <div className="temp">
       <HomeNav/>
-      
-      
       <Com1/>
       <Com2/>
       <Com3/>
       <Com4/>
       <Com5/>
       <Com6/>
+      <HomeFooter/>
+
       
     </div>
   )
