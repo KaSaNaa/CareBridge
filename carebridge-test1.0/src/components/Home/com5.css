@@ -1,8 +1,13 @@
 .com5-main-con{
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
     
     
+}
+.com5-part1{
+    margin-top: 35px;
+    margin-bottom: 55px;
 }
 
 .com5-part2{

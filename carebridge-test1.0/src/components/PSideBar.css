@@ -7,15 +7,16 @@
     margin-top: 10px;
     margin-left: 5px;
     border-radius: 59.56px 34.74px 34.74px 59.56px ;
-    width: 125px;
+    width: 140px;
     height: 800px;
       
   }
   
   .psidebar {
     list-style-type: none;
-    padding: 0;
+    padding: 0px;
     margin-top: 15px;
+    
   }
   
   .psidebar li {
@@ -33,20 +34,35 @@
   
   .psidebar li:hover {
     background-color: #fffefe;
-  }
-  
-  .icon-container {
-    width: 20px;
-    margin-bottom: 10px;
-    
-  }
-  
-  .icon-container img {
+  } 
+
+  .navigate-button{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
     width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.268);
+    background-color: transparent;
+    gap: 5px;
   }
 
-  .psidebar a{
-    color: black;
-    text-decoration: none;
+  /* Media Queries */
+@media only screen and (max-width: 768px) {
+  .column {
+    /* width: 100%; Full width on smaller screens */
+    /* margin: 10px 0; Adjust margin for smaller screens */
   }
   
+  .psidebar li {
+    margin-bottom: 20px; /* Reduce margin bottom on smaller screens */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .p-sidebar {
+    padding: 0 10px; /* Adjust padding for smaller screens */
+  }
+}

@@ -16,9 +16,9 @@ export default function PAppoinment() {
   }
   return (
     <div className="page">
-      <div className="com1">
+      {/* <div className="com1">
       <PSideBar/>
-      </div>
+      </div> */}
       <div className="com2">
       <SelectApp/>
       </div>

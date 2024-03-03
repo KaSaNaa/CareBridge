@@ -5,18 +5,17 @@ body {
   padding: 0;
 }
 
-/* Container Styles */
-.p-mid-main-container {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column layout */
-  gap: 20px;
-  max-width: 100%;
-  margin: 0px;
-  padding: 20px;
+
+.p-mid-main-container{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: white;
+  
   
 }
 
-/* Header Styles */
+
 .div-heading {
   
   border-radius: 30px 30px 0 0;
@@ -27,15 +26,15 @@ body {
 
 .p-head {
   margin: 0;
+  
 }
 
 /* Main Content Styles */
 .div-mid-main {
-  background-color: #fff;
-  border-radius: 0 0 30px 30px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  display: flex;
+  flex-direction: row;
   gap: 20px;
+
 }
 
 .div-mid-input,
@@ -43,6 +42,12 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.div-mid-input{
+  width: 400px;
+}
+.div-mid-input-al{
+  width: 300px;
 }
 
 /* Form Styles */
@@ -116,6 +121,7 @@ body {
 .btn-dlt {
   background-color: rgba(255, 0, 0, 0.713);
   color: #fff;
+  margin-top: 10px;
 }
 
 .btn-div {
@@ -126,5 +132,7 @@ body {
 
 .down-btn {
   display: flex;
+  flex-direction: row;
+  margin-top: 10px;
   gap: 20px;
 }

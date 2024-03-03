@@ -8,9 +8,9 @@ import PProfileCMP2 from '../../components/PProfileCMP2';
 export default function Profile() {
   return (
     <div className='main-p-container'>
-      <div className="p-cmp-1">
+      {/* <div className="p-cmp-1">
       <PSideBar/>
-      </div>
+      </div> */}
       <div className="p-cmp-2">
         <PProfileCMP1/>
       </div>

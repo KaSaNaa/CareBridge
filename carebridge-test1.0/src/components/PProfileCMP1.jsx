@@ -31,22 +31,19 @@ export default function PProfileCMP1() {
                 <p className="p-p">Kottawa, Pannipitiya</p>
 
                 <div className="mid-con">
-                    <table className="p-table">
-                        <thead>
-                            <tr className="tr1">
-                                <th>Blood</th>
-                                <th>Weight</th>
-                                <th>Height</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className="tr2">
-                                <td>O+</td>
-                                <td>157kg</td>
-                                <td>150cm</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="div-mid-pt1">
+                        <p className="mid-pt1-para">Blood</p>
+                        <p className="mid-pt1-para2">0+</p>
+                    </div>
+                    <div className="div-mid-pt1">
+                        <p className="mid-pt1-para">Height</p>
+                        <p className="mid-pt1-para2">173cm</p>
+                    </div>
+                    <div className="div-mid-pt1">
+                        <p className="mid-pt1-para">Weight</p>
+                        <p className="mid-pt1-para2">94kg</p>
+                    </div>
+                    
                 </div>
             </div>
             <div className="p-alergies">

@@ -1,11 +1,11 @@
 .home-com2-con {
-    height: 800px;
+    height: 820px;
     display: flex;
     flex-direction: column;
 }
 
 .com2-part1 {
-    margin-top: 50px;
+    margin-top: 15px;
 }
 
 .com2-part2 {
