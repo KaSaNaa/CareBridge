@@ -1,0 +1,40 @@
+.class-wrap-heads{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 40px;
+}
+.small-head{
+    color: black;
+    font-size: 25px;
+
+}
+.small-para{
+    color: rgb(0, 0, 0);
+    font-weight:lighter;
+    font-size: 20px;
+    margin-top: 10px;
+
+}
+.small-footer{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    margin-top: 8px;
+}
+.care-img{
+    width: 26px;
+    height: 26px;
+}
+.dev-lin{
+    height: 1px;
+    width: 250px;
+    background:#2020209a;
+    display: flex;
+    flex-direction: row;
+    margin-top:15px;
+}
+
+

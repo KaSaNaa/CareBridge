@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import './pinput.css';
 import { initializeApp } from "firebase/app";
@@ -17,6 +18,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// eslint-disable-next-line react/prop-types, no-unused-vars
 export default function PInput({ handleClick, item }) {
   const [formData, setFormData] = useState({
     name: '',

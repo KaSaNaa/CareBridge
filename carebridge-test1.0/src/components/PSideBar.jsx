@@ -1,43 +1,39 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React from 'react';
 import './PSideBar.css';
 import appoinment from "../assets/appoinment.svg";
 import contact from "../assets/contact.svg";
 import history from "../assets/history.svg";
 import profile from "../assets/profile.svg";
 
-
-
-export default function PSideBar() {
+export default function PSideBar({ handleNavigation }) {
   return (
     <div className="column">
-  <ul className="psidebar">
-    <li>
-      <div className="icon-container">
-        <img src={profile} alt="profile icon" />
-      </div>
-      <a href="profile">Profile</a>
-    </li>
-    <li>
-      <div className="icon-container">
-        <img src={appoinment} alt="appoinment icon" />
-      </div>
-      <a href="appoinment">Appoinment</a>
-    </li>
-    <li>
-      <div className="icon-container">
-        <img src={contact} alt="contact icon" />
-      </div>
-      <a href="contact">Contact</a>
-    </li>
-    <li>
-      <div className="icon-container">
-        <img src={history} alt="history icon" />
-      </div>
-      <a href="history">History</a>
-    </li>
-  </ul>
-</div>
-
+      <ul className="psidebar">
+        <li>
+          <button className='navigate-button' onClick={() => handleNavigation('profile')}>
+            <img src={profile} alt="profile"></img>
+            Profile
+          </button>
+        </li>
+        <li>
+          <button className='navigate-button' onClick={() => handleNavigation('appointment')}>
+            <img src={appoinment} alt="appointment"></img>
+            Appointment
+          </button>
+        </li>
+        <li>
+          <button className='navigate-button' onClick={() => handleNavigation('history')} >
+            <img src={history} alt="history"></img>
+            History
+          </button>
+        </li>
+        <li>
+          <button className='navigate-button' onClick={() => handleNavigation('contact')}>
+            <img src={contact} alt="contact"></img>
+            Contact
+          </button>
+        </li>
+      </ul>
+    </div>
   )
 }

@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; /* Light background color */
+    font-family: Arial, sans-serif; /* Default font family */
+  }
+  
+  .logout-container {
+    background-color: #fff; /* White background */
+    max-width: 700px; /* Set maximum width */
+    width: 90%; /* Responsive width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  .logout-head {
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  .logout-body {
+    background-color: #fff; /* White background */
+    width: 100%;
+    padding: 20px;
+    font-size: 18px; /* Increased font size for better readability */
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+    border-top: none; /* Remove top border */
+    border-radius: 0 0 10px 10px; /* Rounded corners only at the bottom */
+    margin-bottom: 20px;
+  }
+  
+  .logout-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: auto; /* Push buttons to the bottom */
+  }
+  
+  .lg-btn1,
+  .lg-btn2 {
+    padding: 10px 20px;
+    margin-left: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .lg-btn1 {
+    background-color: #4ac5b7; /* Light gray */
+  }
+  
+  .lg-btn2 {
+    background-color: #1ab3e2; /* Blue */
+    color: #fff; /* White text */
+  }
+  
+  .lg-btn1:hover,
+  .lg-btn2:hover {
+    background-color: #ccc; /* Darker shade on hover */
+  }
+  

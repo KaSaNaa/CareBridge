@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.p-mid-main-container{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: white;
+  
+  
+}
+
+
+.div-heading {
+  
+  border-radius: 30px 30px 0 0;
+  padding: 20px;
+  color: rgb(29, 217, 217);
+  border: rgba(128, 128, 128, 0.375) solid thin;
+}
+
+.p-head {
+  margin: 0;
+  
+}
+
+/* Main Content Styles */
+.div-mid-main {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+}
+
+.div-mid-input,
+.div-mid-input-al {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.div-mid-input{
+  width: 400px;
+}
+.div-mid-input-al{
+  width: 300px;
+}
+
+/* Form Styles */
+.div-mid-input label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.div-mid-input input[type="text"],
+.div-mid-input input[type="date"],
+.div-mid-input-al .alergies-input-li li input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.div-mid-input .form-group {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 10px;
+}
+.form-group-gender{
+  display: flex;
+  flex-direction: row;
+  gap: 58px;
+  align-items: end;
+  
+  
+
+}
+.radio-lbl{
+  margin-right: 10px;
+}
+
+.form-group .radio-label {
+  display: inline-block;
+  margin-right: 10px;
+}
+.div-mid-input-al .alergies-input-li {
+  list-style-type: none;
+  padding: 0;
+}
+
+.div-mid-input-al .alergies-input-li li {
+  margin-bottom: 10px;
+}
+
+/* Button Styles */
+.btn-save,
+.btn-logout,
+.btn-dlt {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: rgba(10, 248, 18, 0.695);
+  color: rgb(10, 73, 26);
+}
+
+.btn-logout {
+  background-color: grey;
+  color: #fff;
+}
+
+.btn-dlt {
+  background-color: rgba(255, 0, 0, 0.713);
+  color: #fff;
+  margin-top: 10px;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.down-btn {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  gap: 20px;
+}

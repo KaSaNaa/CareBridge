@@ -1,0 +1,59 @@
+.card-com{
+    width: 235px;
+    height: 235px;
+    border: solid rgba(0, 0, 0, 0.062);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.074);
+    background-color: #ededed;
+
+}
+
+.card-wrapper-sml{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    border: 1px  solid #46CDCF;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.cd-img{
+    width: 30px;
+    height: 30px;
+}
+
+.cd-tit{
+    font-size: 25px;
+    color: black;
+    padding: 5px;
+    margin-bottom: 10px;
+
+}
+
+.cd-p{
+    text-align: center;
+    padding: 5px;
+    margin-top: 7px;
+    font-size: 15px;
+    font-weight: lighter;
+
+
+}
+
+@media screen and (max-width: 600px) {
+    .card-com {
+        width: 100%;
+        height: auto;
+    }
+}

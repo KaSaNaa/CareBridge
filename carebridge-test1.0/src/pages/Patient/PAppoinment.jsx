@@ -1,32 +1,57 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import "./pappoinment.css";
-import PSideBar from '../../components/PSideBar';
 import SelectApp from '../../components/SelectApp';
-// eslint-disable-next-line no-unused-vars
 import PInput from '../../components/PInput';
-import MultiFilters from '../../components/Mulrifilter';
+import Multifilters from '../../components/Multifilters.jsx';
+import Viewapp from '../../components/Viewapp.jsx';
+import Changeapp from '../../components/Changeapp';
 
 
 export default function PAppoinment() {
-  const [com3Selection, setCom3Selection] = useState({'component': 'MultiFilters'})
-  const loadComponent = (component) => {
-    setCom3Selection(component)
-    console.log('selected component:', component)
-  }
+
+  const[selectedAppointment, setSelectedAppointment] = useState(null);
+  const[selectedDoctor, setSelectedDoctor] = useState(null);
+  const[displayMultifilters, setDisplayMultifilters] = useState(true);
+
+  const handleAppointment = (appointmentType) => {
+     setSelectedAppointment(appointmentType);
+  };
+
+  const handleDoctorSelection = (item)=> {
+    console.log("Selected Doctor: ", item);
+    setSelectedDoctor(item);
+    if (item.component === 'PInput') {
+      console.log("Navigating to PInput...");
+      setSelectedAppointment('book-appointment');
+      setDisplayMultifilters(false);
+    }
+  };
+
+  const renderAppointmentComponent = () =>{
+    switch (selectedAppointment) {
+      case 'book-appointment':
+        return displayMultifilters ? <Multifilters handleClick={handleDoctorSelection}/> : null;
+      case 'change-appointment':
+        return <Changeapp/>;
+      case 'view-appointment':
+        return <Viewapp />;
+      default:
+        return <Multifilters handleClick={handleDoctorSelection}/>;
+    }
+  };
+  
+  console.log("Selected Appointment: ", selectedAppointment);
+  console.log("Selected Doctor: ", selectedDoctor);
+  
   return (
     <div className="page">
       <div className="com1">
-      <PSideBar/>
+        <SelectApp handleAppointment={handleAppointment}/>
       </div>
       <div className="com2">
-      <SelectApp/>
+        {renderAppointmentComponent()}
+        {selectedDoctor && selectedDoctor.component === 'PInput' && selectedAppointment === 'book-appointment' && <PInput item={selectedDoctor.item} />}
       </div>
-      <div className="com3">
-        {com3Selection.component === 'MultiFilters' && <MultiFilters handleClick={loadComponent}/>}
-        {com3Selection.component === 'PInput' && <PInput handleClick={loadComponent} item={com3Selection.item}/>}
-        
-      </div>
-      </div>
-  )
+    </div>
+  );
 }

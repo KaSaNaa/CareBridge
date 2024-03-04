@@ -1,0 +1,82 @@
+.card2-con{
+    width: 505px;
+    height: 296px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(0, 0, 0, 0.136);
+
+
+
+
+}
+.document-sec{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.152);
+
+}
+
+.card2-img{
+    width: 270px;
+    height: 296px;
+    opacity: 0.9;
+
+}
+.card2-head{
+    font-size: 20px;
+    padding: 10px;
+
+}
+.card2-mid{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+
+}
+.card2-img2{
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+
+
+}
+
+.card2-mid-para{
+    font-size: medium;
+    color: black;
+    font-weight: lighter;
+
+
+}
+
+.card2-para{
+    padding: 10px;
+    font-size: medium;
+    font-weight: lighter;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .card2-con {
+        max-width: 100%; /* Change to full width */
+    }
+
+    .card2-con,
+    .card2-img {
+        width: 100%; /* Make elements fill their containers */
+    }
+
+    .document-sec {
+        border: none; /* Remove border */
+    }
+
+    .card2-head,
+    .card2-mid-para,
+    .card2-para {
+        font-size: 16px; /* Adjust font size */
+    }
+}
