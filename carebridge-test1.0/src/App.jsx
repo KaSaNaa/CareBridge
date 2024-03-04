@@ -16,10 +16,10 @@ export default function App() {
     <div>
    
       {/* <Mainhome/> */}
-      {/* <Patient/> */}
+      <Patient/>
       {/* <Viewapp/>
       <Changeapp/> */}
-      <PAppoinment/>
+      {/* <PAppoinment/> */}
       {/* <MultiFilters/> */}
       {/* <SelectApp/> */}
 
