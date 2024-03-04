@@ -1,6 +1,6 @@
 // JSX
 import React from 'react';
-import './com4.css';
+import './section4.css';
 import Group from '../../assets/Group.png';
 
 export default function Com4() {

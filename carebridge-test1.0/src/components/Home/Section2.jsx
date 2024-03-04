@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import './com2.css';
+import './section2.css';
 import TitleCom from './TitleCom';
 import tick from '../../assets/tick.png';
 import read from '../../assets/read.jpg';

@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import './com5.css';
-import TitleCom from './TitleCom';
+import './section5.css';
+import TitleCom from './TitleCom.jsx';
 import Card1 from './Card1.jsx';
 import img1 from '../../assets/img1.png';
 import img2 from '../../assets/img2.png';

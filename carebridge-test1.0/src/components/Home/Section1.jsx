@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import './com1.css';
+import './section1.css';
 
 
 export default function Com1() {
