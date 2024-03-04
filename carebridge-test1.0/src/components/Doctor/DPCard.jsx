@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import doc from "../../assets/doc.jpg";
+import doc from "../../assets/doctor.jpg";
 import { colors } from "../../assets/colorPalette";
 
 const DPCard = () => {
