@@ -1,0 +1,130 @@
+.home-com1-con {
+    background-image: url('../../assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    /* position: fixed; */
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+}
+
+.com1-part1 {
+    font-size: 40px;
+    margin-top: 95px;
+    margin-left: 95px;
+}
+
+.com1-part1 .smh1 {
+    color: white;
+}
+
+.highlight {
+    color: #46CDCF;
+}
+
+.com1-part2 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 90px;
+    padding: 20px;
+}
+
+.btn-abt,
+.btn-con {
+    padding: 10px;
+    margin-left: 1px;
+    width: 160px;
+    margin-top: 49px;
+    border: none;
+    border-radius: 10.8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    letter-spacing: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.btn-con {
+    margin-left: 40px;
+    background-color: #46cdcf;
+    color: white;
+    justify-content: center;
+    padding: 10px;
+}
+
+.com1-part3 {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: calc(100% - 190px); /* Adjusted width */
+    max-width: 719px;
+    height: 129px;
+    background-color: #3c5665;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.247);
+}
+
+.location,
+.find-doc {
+    padding: 10px;
+    width: 212px;
+    height: 50px;
+    text-align: center;
+    border-radius: 10.8px;
+    border: none;
+    background-color: #5a7480;
+    color: white;
+    font-weight: bold;
+}
+
+.location {
+    margin-left: 30px;
+}
+
+.find-doc {
+    margin-right: 30px;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    .home-com1-con {
+        height: auto;
+    }
+
+    .com1-part1 {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    .com1-part2 {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .btn-abt,
+    .btn-con {
+        margin-top: 20px;
+    }
+
+    .btn-con {
+        margin-left: 0;
+    }
+
+    .com1-part3 {
+        width: 90%;
+        max-width: none;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .location,
+    .find-doc {
+        width: 45%;
+        margin: 10px;
+    }
+}

@@ -1,0 +1,59 @@
+.main-dlt-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  
+  .dlt-header {
+    background-color: #d84444;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .dlt-body {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .dlt-btn-sec {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  .dlt-btn1,
+  .dlt-btn2 {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .dlt-btn1:hover,
+  .dlt-btn2:hover {
+  filter: brightness(1.2); /* Add hover effect */
+}
+  
+  .dlt-btn1 {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .dlt-btn2 {
+    background-color: #e74c3c;
+    color: #fff;
+  }
+  

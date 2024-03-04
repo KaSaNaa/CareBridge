@@ -1,0 +1,39 @@
+.select-app{
+    background-color: lightgray;
+    width: 315px;
+    height: 780px;
+    border-radius: 5px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+}
+.head-app{
+    text-align: center;
+    padding: 50px;
+    font-weight: bolder;
+    font-size: 28px;
+    color: rgb(59, 60, 60);
+}
+.app-ul li{
+    padding: 20px;
+    text-decoration: none;
+    list-style-type: none;
+    
+}
+
+.appoin-button{
+    padding: 10px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.162);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+.appoin-button:hover {
+    background-color: aqua;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(146, 146, 146, 0.5);
+    
+    
+}

@@ -1,0 +1,107 @@
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 25px;
+  }
+  
+  .head1 {
+    flex: 1;
+  }
+  
+  .head2 {
+    flex: 1;
+  }
+
+  
+  .input-field {
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .input-field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .input-field input[type="text"],
+  .input-field input[type="email"],
+  .input-field input[type="time"],
+  .input-field input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .main-sub {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+  }
+  
+  .sub1 {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .sub2 {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 30px;
+  }
+  .button1 {
+    width: 100%; /* Make button width 100% */
+    max-width: 415px; /* Set maximum width */
+    height: 67px;
+    margin: auto; /* Center the button horizontally */
+    margin-top: 20px; /* Add top margin for spacing */
+    display: block; /* Ensure it takes up full width */
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(50, 103, 207);
+  }
+  .button1:hover{
+    background-color: lightblue;
+  }
+
+  .form-container {
+    max-width: auto; /* Adjust as needed */
+    margin: auto; /* Center the form horizontally */
+  }
+  .select-doc{
+    text-align:left;
+    margin-left: 30px;
+  }
+  .select-doc-btn{
+    border: none;
+    border-radius: 7px;
+    padding: 20px;
+    width: auto;
+    cursor: pointer;
+    text-align: center;
+    background-color: aquamarine;
+  }
+  .select-doc-btn:hover{
+    background-color: lightblue;
+  }
+  .select-doc-btn a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: larger;
+    font-size: 20px;
+  }

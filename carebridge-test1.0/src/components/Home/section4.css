@@ -1,0 +1,46 @@
+.com4-main-con {
+    position: relative;
+}
+
+
+.img-grp{
+margin-top: -180px;
+width: 100%;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%; 
+    left: 70%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    background-color: antiquewhite;
+    opacity: 0.8;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px; 
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.243);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.205);
+}
+
+.grp-head{
+
+    font-size: 30px;
+    padding: 20px;
+    margin: 10px;
+    color: black;
+
+
+}
+
+.grp-para{
+
+    font-size: medium;
+    font-weight: lighter;
+    padding: 20px;
+    margin: 10px;
+    
+
+
+}
