@@ -1,17 +1,16 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
+// SelectApp.jsx
+import React from 'react';
 import "./selectApp.css";
 
-export default function SelectApp() {
+export default function SelectApp({ handleAppointment }) {
   return (
     <div className="select-app">
-        <header className="head-app">Appoinment</header>
-        <ul className="app-ul">
-            <li><a href="book-appoinmnet">Book Appoinment</a></li>
-            <li><a href="chnage-appoinmnet">Chnage Appoinment</a></li>
-            <li><a href="view-appoinmnet">View Appoinment</a></li>
-        </ul>
-      
+      <header className="head-app">Appointment</header>
+      <ul className="app-ul">
+        <li><button className='appoin-button'  onClick={() => handleAppointment('book-appointment')}>Book Appointment</button></li>
+        <li><button  className='appoin-button' onClick={() => handleAppointment('change-appointment')}>Change Appointment</button></li>
+        <li><button  className='appoin-button' onClick={() => handleAppointment('view-appointment')}>View Appointment</button></li>
+      </ul>
     </div>
-  )
+  );
 }

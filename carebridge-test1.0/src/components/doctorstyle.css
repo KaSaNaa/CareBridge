@@ -14,21 +14,15 @@ p {
   margin: 0;
   padding: 0;
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(to bottom, #5b21b6, #1e40af);
-  color: #fff;
-}
+
+
 
 .buttons-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
+
 .button {
   border: 1px solid #000;
   background: transparent;
@@ -52,11 +46,12 @@ p {
   color: #000;
   margin-top: 100px;
 }
+
 .item-container {
   text-decoration: none; /* Remove default anchor underline */
-  display: inline-flex; /* Make container inline-flex to shrink to fit content */
+  display: flex;
+  flex-direction: row; /* Make container inline-flex to shrink to fit content */
 }
-
 
 .item {
   padding: 4px 10px;
@@ -79,4 +74,29 @@ p {
   background-color: #1e293b;
   color: #fff;
 }
+.item {
+  /* Your existing styles for doctor list items */
+  /* Add additional styles for hover effect */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
 
+.item:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+
+/* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  
+  .buttons-container {
+    flex-direction: column;
+  }
+  
+  .item-container {
+    width: 100%;
+  }
+}

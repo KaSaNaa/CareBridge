@@ -1,14 +1,19 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { items } from "./Doctors";
 import "./doctorstyle.css";
 
-// eslint-disable-next-line react/prop-types
-export default function MultiFilters({handleClick}) {
+export default function MultiFilters({ handleClick }) {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [filteredItems, setFilteredItems] = useState(items);
 
-  let filters = ["CARDIOLOGY", "DERMATOLOGY", "ONCOLOGY", "GYNCOLOGY", "PHYSCOLOGY", "GYNCODOLOGY"];
+  let filters = [
+    "CARDIOLOGY",
+    "DERMATOLOGY",
+    "ONCOLOGY",
+    "GYNCOLOGY",
+    "PHYSCOLOGY",
+    "GYNCODOLOGY",
+  ];
 
   const handleFilterButtonClick = (selectedCategory) => {
     if (selectedFilters.includes(selectedCategory)) {
@@ -34,12 +39,9 @@ export default function MultiFilters({handleClick}) {
       setFilteredItems([...items]);
     }
   };
+
   const handleItemClick = (item) => {
-    // Navigate to the appointment page using React Router or any navigation library
-    // Example: history.push(`/appointment/${item.name}`);
-    // console.log("Navigating to appointment page for", item.name);
-    handleClick({'component': 'PInput', 'item': item})
-    // handleClick('PInput')
+    handleClick({ component: 'PInput', item: item });
   };
 
   return (
@@ -58,17 +60,20 @@ export default function MultiFilters({handleClick}) {
         ))}
       </div>
 
-      <a className="item-container">
+      <div className="item-container">
         <div className="items-container">
           {filteredItems.map((item, idx) => (
-            <div key={`items-${idx}`} className="item" onClick={() => handleItemClick(item.id)}>
+            <div
+              key={`items-${idx}`}
+              className="item"
+              onClick={() => handleItemClick(item)}
+            >
               <p>{item.name}</p>
               <p className="category">{item.category}</p>
             </div>
           ))}
         </div>
-      </a>
+      </div>
     </div>
   );
 }
-
