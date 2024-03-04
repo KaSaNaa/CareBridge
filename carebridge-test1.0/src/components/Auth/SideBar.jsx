@@ -1,11 +1,90 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import logo from '../../assets/logo.svg';
+import logo from "../../assets/logo.svg";
 import Input from "./Input";
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 import { colors } from "../../assets/colorPalette";
 
-const Sidebar = ({ formType }) => {
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { db, auth } from "../../config/firebaseConfigs";
+
+const SideBar = ({ formType }) => {
+  const [userData, setUserData] = useState({
+    fName: "",
+    lName: "",
+    mobile: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserData({
+      ...userData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(
+      "Email:",
+      userData.email + "\nPassword: ",
+      userData.password + "\nFirst Name: ",
+      userData.fName + "\nLast Name: ",
+      userData.lName + "\nMobile: ",
+      userData.mobile + "\nConfirm Password: ",
+      userData.confirmPassword
+    );
+
+    try {
+      if (formType === "signin") {
+        // Validate that all required fields are filled
+        if (!userData.email || !userData.password) {
+          alert("Please fill in all required fields.");
+          return;
+        }
+        await signInWithEmailAndPassword(
+          auth,
+          userData.email,
+          userData.password
+        );
+        alert("Sign in successful!");
+        navigate("/DoctorDashboard");
+      } else {
+        const { email, password, fName, lName, mobile } = userData;
+        if (userData.password !== userData.confirmPassword) {
+          console.log("Passwords do not match");
+          return;
+        }
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+        navigate("/signin");
+
+        await setDoc(doc(db, "Patients", userCredential.user.email), {
+          email,
+          fName,
+          lName,
+          mobile,
+          password,
+        });
+      }
+    } catch (error) {
+      alert("Authentication failed" + error.message);
+    }
+  };
+
   return (
     <Container>
       <LogoWrapper>
@@ -14,22 +93,66 @@ const Sidebar = ({ formType }) => {
           CARE<span> BRIDGE</span>
         </h3>
       </LogoWrapper>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <h3>{formType === "signup" ? "Sign Up" : "Sign In"}</h3>
         {formType === "signup" ? (
           <>
-            <Input id="fName" placeholder="Full Name" />
-            <Input id="email" type="email" placeholder="Email Address" />
-            <Input id="pswd" type="password" placeholder="Password" />
-            <Input id="confirmpswd" type="password" placeholder="Confirm Password" />
+            <Input
+              id="fName"
+              type="text"
+              name="fName"
+              value={userData.fName}
+              placeholder="First Name"
+              onChange={handleChange}
+            />
+            <Input
+              id="lName"
+              type="text"
+              name="lName"
+              value={userData.lName}
+              placeholder="Last Name"
+              onChange={handleChange}
+            />
+            <Input
+              id="Mobile"
+              type="tel"
+              name="mobile"
+              value={userData.mobile}
+              placeholder="Phone Number"
+              onChange={handleChange}
+            />
           </>
-        ) : (
-          <>
-            <Input id="email" type="email" placeholder="Email" />
-            <Input id="pswd" type="password" placeholder="Password" />
-          </>
-        )}
-        <button>{formType === "signup" ? "Sign up" : "Sign in"}</button>
+        ) : null}
+        <Input
+          id="email"
+          type="email"
+          name="email"
+          value={userData.email}
+          placeholder="Email Address"
+          onChange={handleChange}
+        />
+        <Input
+          id="pswd"
+          type="text"
+          name="password"
+          value={userData.password}
+          placeholder="Password"
+          onChange={handleChange}
+        />
+        {formType === "signup" ? (
+          <Input
+            id="confirmpswd"
+            type="text"
+            name="confirmPassword"
+            value={userData.confirmPassword}
+            placeholder="Confirm Password"
+            onChange={handleChange}
+          />
+        ) : null}
+
+        <button type="submit">
+          {formType === "signup" ? "Sign up" : "Sign in"}
+        </button>
       </Form>
       <div>
         <Terms>
@@ -39,11 +162,18 @@ const Sidebar = ({ formType }) => {
         <h4>
           {formType === "signup" ? (
             <>
-              Already have an account? <span><Link to={"/signin"}>Sign in</Link></span>
+              Already have an account?{" "}
+              <span>
+                <Link to={"/signin"}>Sign in</Link>
+              </span>
             </>
           ) : (
             <>
-              New to CareBridge? <span><Link to={"/signup"}>Sign up</Link></span> here.
+              New to CareBridge?{" "}
+              <span>
+                <Link to={"/signup"}>Sign up</Link>
+              </span>{" "}
+              here.
             </>
           )}
         </h4>
@@ -100,13 +230,11 @@ const LogoWrapper = styled.div`
   h3 {
     color: #006878;
     text-align: center;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 
   span {
     color: #6d5389;
     text-align: center;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 `;
 
@@ -140,4 +268,4 @@ const Container = styled.div`
   }
 `;
 
-export default Sidebar;
+export default SideBar;

@@ -1,11 +1,13 @@
+// In SideBarButton.js
+
 import React from "react";
 import styled from "styled-components";
-import { colors } from "../../assets/colorPalette"; // Assuming you have a file for colors
+import { colors } from "../../assets/colorPalette";
 
-const SideBarButton = ({ onClick, icon, title }) => {
+const SideBarButton = ({ onClick, icon, title, isActive }) => {
   return (
     <li>
-      <ButtonSidebar onClick={onClick}>
+      <ButtonSidebar onClick={onClick} className={isActive ? "active" : ""}>
         <Icon>{icon}</Icon>
         {title}
       </ButtonSidebar>
@@ -16,19 +18,17 @@ const SideBarButton = ({ onClick, icon, title }) => {
 const ButtonSidebar = styled.button`
   position: relative;
   width: 100%;
-
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: left;
-
+  font-size: 15px;
   border: none;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  font-weight: 350;
+  font-weight: 600;
   transition: all 0.2s ease-in;
   color: ${colors.onSecContainer};
-
   height: 70px;
 
   &:hover {
@@ -37,8 +37,8 @@ const ButtonSidebar = styled.button`
   }
 
   &.active {
-    background: ${colors.secContainer};
-    color: ${colors.onPrimContainer};
+    background: ${colors.Prim};
+    color: ${colors.onTrinity};
     transition: all 0.4s ease-in-out;
     font-weight: 500;
   }
@@ -48,5 +48,8 @@ const Icon = styled.div`
   margin-right: 15px;
   margin-left: 20px;
   height: 24px;
+  background-color: ${colors.SurfContainer};
+  border-radius: 5px;
 `;
+
 export default SideBarButton;
