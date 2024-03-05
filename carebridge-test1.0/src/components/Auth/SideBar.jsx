@@ -36,15 +36,15 @@ const SideBar = ({ formType }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(
-      "Email:",
-      userData.email + "\nPassword: ",
-      userData.password + "\nFirst Name: ",
-      userData.fName + "\nLast Name: ",
-      userData.lName + "\nMobile: ",
-      userData.mobile + "\nConfirm Password: ",
-      userData.confirmPassword
-    );
+    // console.log(
+    //   "Email:",
+    //   userData.email + "\nPassword: ",
+    //   userData.password + "\nFirst Name: ",
+    //   userData.fName + "\nLast Name: ",
+    //   userData.lName + "\nMobile: ",
+    //   userData.mobile + "\nConfirm Password: ",
+    //   userData.confirmPassword
+    // );
 
     try {
       if (formType === "signin") {
@@ -116,6 +116,7 @@ const SideBar = ({ formType }) => {
               value={userData.fName}
               placeholder="First Name"
               onChange={handleChange}
+              autoComplete="on"
             />
             <Input
               id="lName"
@@ -142,6 +143,7 @@ const SideBar = ({ formType }) => {
           value={userData.email}
           placeholder="Email Address"
           onChange={handleChange}
+          autocomplete="on"
         />
         <Input
           id="pswd"

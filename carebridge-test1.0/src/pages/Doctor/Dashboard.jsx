@@ -6,7 +6,8 @@ import DetailswithTitleCard from "../../components/Doctor/DetailswithTitleCard";
 import DoctorDetailsForm from "../../components/Doctor/DoctorDetailsForm";
 import ChangePswd from "../../components/Doctor/ChangePswd";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../config/firebaseConfigs";
+import { db, user } from "../../config/firebaseConfigs";
+import { getAuth } from "firebase/auth";
 
 const Dashboard = () => {
   const [doctorData, setDoctorData] = useState({
@@ -14,7 +15,7 @@ const Dashboard = () => {
     lastName: "",
     address: "",
     biography: "",
-    contactNumbe: "",
+    contactNumber: "",
     dob: "",
     email: "",
     experience: "",
@@ -25,10 +26,16 @@ const Dashboard = () => {
     specialization: "",
   });
 
-  // Function to fetch doctor details from Firebase
-  const fetchDoctorDetails = async () => {
+ // Function to fetch doctor details from Firebase
+const fetchDoctorDetails = async () => {
+  const auth = getAuth();
+  const user = auth.currentUser;
+
+  if (user) {
+    const uID = user.uid;
     try {
-      const doctorRef = doc(db, "Doctors", "TQ6vymyy5F4knPsIxsu6");
+      console.log("UID: ", uID);
+      const doctorRef = doc(db, "Doctors", uID);
       const doctorDoc = await getDoc(doctorRef);
       if (doctorDoc.exists) {
         setDoctorData(doctorDoc.data());
@@ -38,7 +45,10 @@ const Dashboard = () => {
     } catch (error) {
       console.error("Error fetching doctor details: ", error);
     }
-  };
+  } else {
+    console.log("No user is signed in.");
+  }
+};
 
   // Fetch doctor details on component mount
   useEffect(() => {
@@ -67,7 +77,17 @@ const Dashboard = () => {
           />
         </div>
         <div className="col2">
-          <DoctorDetailsForm />
+          <DoctorDetailsForm
+            firstName={doctorData.firstName}
+            lastName={doctorData.lastName}
+            gender={doctorData.gender}
+            email={doctorData.email}
+            contactNumber={doctorData.contactNumber}
+            address={doctorData.address}
+            dob={doctorData.dob}
+            officeHours={doctorData.officeHours}
+            professionalQualification={doctorData.professionalQualification}
+          />
         </div>
         <div className="col3">
           <ChangePswd />

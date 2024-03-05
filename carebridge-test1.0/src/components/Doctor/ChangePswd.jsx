@@ -1,47 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { colors } from "../../assets/colorPalette";
+import { updateUserPassword } from "../../config/firebaseConfigs";
 
 const ChangePswd = () => {
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "newPswd") {
+      setNewPassword(value);
+    } else if (name === "confirmPswd") {
+      setConfirmPassword(value);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (newPassword !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+    // Call the updatePassword function with the new password
+    updateUserPassword(newPassword);
+  };
+
   return (
     <Wrapper>
       <h1>Change Password</h1>
       <Line />
-      <Form>
-        <Field>
-          <label htmlFor="currentPswd">Current Password</label>
-          <input type="password" id="currentPswd" name="currentPswd" />
-        </Field>
+      <Form onSubmit={handleSubmit}>
         <Field>
           <label htmlFor="newPswd">New Password</label>
-          <input type="password" id="newPswd" name="newPswd" />
+          <input
+            type="text"
+            id="newPswd"
+            name="newPswd"
+            value={newPassword}
+            onChange={handleChange}
+          />
         </Field>
         <Field>
           <label htmlFor="confirmPswd">Confirm Password</label>
-          <input type="password" id="confirmPswd" name="confirmPswd" />
+          <input
+            type="text"
+            id="confirmPswd"
+            name="confirmPswd"
+            value={confirmPassword}
+            onChange={handleChange}
+          />
         </Field>
         <CenterButton>
           <PswdBtn type="submit">Change Password</PswdBtn>
         </CenterButton>
-        <ButtonWrapper>
-          <Button className="edit">
-            <BtnText>Edit</BtnText>
-          </Button>
-
-          <Button className="save">
-            <BtnText>Save</BtnText>
-          </Button>
-
-          <Button className="cancel">
-            <BtnText>Cancel</BtnText>
-          </Button>
-        </ButtonWrapper>
       </Form>
     </Wrapper>
   );
 };
 
 export default ChangePswd;
+
+// Styled components remain the same
+
 
 const ButtonWrapper = styled.div`
   display: flex;

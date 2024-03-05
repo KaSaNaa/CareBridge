@@ -4,57 +4,31 @@ import { colors } from "../../assets/colorPalette";
 import { collection, getDoc, doc } from "firebase/firestore";
 import { db } from "../../config/firebaseConfigs";
 
-const DoctorDetailsForm = () => {
+const DoctorDetailsForm = ({
+  firstName,
+  lastName,
+  gender,
+  email,
+  contactNumber,
+  address,
+  dob,
+  officeHours,
+  professionalQualification,
+}) => {
   // State variables
   const [editable, setEditable] = useState(false);
-  const [doctorData, setDoctorData] = useState({
-    firstName: "",
-    lastName: "",
-    gender: "",
-    email: "",
-    contactNumber: "",
-    address: "",
-    dob: "",
-    officeHours: "",
-    professionalQualification: ""
-  });
-
-  // Function to fetch doctor details from Firebase
-  const fetchDoctorDetails = async () => {
-    try {
-      const doctorRef = doc(db, "Doctors", "TQ6vymyy5F4knPsIxsu6")
-      const doctorDoc = await getDoc(doctorRef);
-      if (doctorDoc.exists) {
-        setDoctorData(doctorDoc.data());
-      } else {
-        console.log("No such document!");
-      }
-    } catch (error) {
-      console.error("Error fetching doctor details: ", error);
-    }
-  };
-
-  // Fetch doctor details on component mount
-  useEffect(() => {
-    fetchDoctorDetails();
-  }, []);
-
-  // Function to handle input changes
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setDoctorData({ ...doctorData, [name]: value });
-  };
 
   // Function to save changes to Firebase
   const saveChanges = async () => {
-    try {
-      const doctorRef = collection("doctors").doc("TQ6vymyy5F4knPsIxsu6");
-      await doctorRef.update(doctorData);
-      setEditable(false); // Toggle back to read-only mode after saving changes
-    } catch (error) {
-      console.error("Error saving changes: ", error);
-    }
+    // try {
+    //   const doctorRef = collection("doctors").doc("TQ6vymyy5F4knPsIxsu6");
+    //   await doctorRef.update();
+    //   setEditable(false); // Toggle back to read-only mode after saving changes
+    // } catch (error) {
+    //   console.error("Error saving changes: ", error);
+    // }
   };
+  const handleInputChange = (e) => {}
 
   return (
     <FormWrapper>
@@ -64,7 +38,7 @@ const DoctorDetailsForm = () => {
           <StyledInput
             type="text"
             name="firstName"
-            value={doctorData.firstName}
+            value={firstName}
             onChange={handleInputChange}
             readOnly={!editable}
           />
@@ -75,7 +49,7 @@ const DoctorDetailsForm = () => {
           <StyledInput
             type="text"
             name="lastName"
-            value={doctorData.lastName}
+            value={lastName}
             onChange={handleInputChange}
             readOnly={!editable}
           />
@@ -86,7 +60,7 @@ const DoctorDetailsForm = () => {
           <StyledInput
             type="text"
             name="gender"
-            value={doctorData.gender}
+            value={gender}
             onChange={handleInputChange}
             readOnly={!editable}
           />
@@ -97,7 +71,7 @@ const DoctorDetailsForm = () => {
           <StyledInput
             type="email"
             name="email"
-            value={doctorData.email}
+            value={email}
             onChange={handleInputChange}
             readOnly={!editable}
           />
@@ -108,7 +82,7 @@ const DoctorDetailsForm = () => {
           <StyledInput
             type="tel"
             name="contactNumber"
-            value={doctorData.contactNumber}
+            value={contactNumber}
             onChange={handleInputChange}
             readOnly={!editable}
           />
@@ -119,7 +93,7 @@ const DoctorDetailsForm = () => {
           <StyledInput
             type="address"
             name="address"
-            value={doctorData.address}
+            value={address}
             onChange={handleInputChange}
             readOnly={!editable}
           />
@@ -130,7 +104,7 @@ const DoctorDetailsForm = () => {
           <StyledInput
             type="date"
             name="dob"
-            value={doctorData.dob}
+            value={dob}
             onChange={handleInputChange}
             readOnly={!editable}
           />
@@ -141,7 +115,7 @@ const DoctorDetailsForm = () => {
           <StyledInput
             type="text"
             name="officeHours"
-            value={doctorData.officeHours}
+            value={officeHours}
             onChange={handleInputChange}
             readOnly={!editable}
           />
@@ -152,7 +126,7 @@ const DoctorDetailsForm = () => {
           <StyledInput
             type="text"
             name="professionalQual"
-            value={doctorData.professionalQualification}
+            value={professionalQualification}
             onChange={handleInputChange}
             readOnly={!editable}
           />

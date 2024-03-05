@@ -4,7 +4,7 @@ import profilePic1 from "../../assets/doctor.jpg";
 import Swal from "sweetalert2"; // Import SweetAlert library
 
 import { collection, getDocs, deleteDoc, doc, getDoc } from "firebase/firestore";
-import { db } from "../../config/firebaseConfigs";
+import { db, user } from "../../config/firebaseConfigs";
 import { colors } from "../../assets/colorPalette";
 
 const PatientTable = () => {
@@ -12,7 +12,7 @@ const PatientTable = () => {
 
   useEffect(() => {
     const getPatients = async () => {
-      const doctorId = 'TQ6vymyy5F4knPsIxsu6'; // replace with your doctor id
+      const doctorId = user.uid; // replace with your doctor id
       const querySnapshot = await getDocs(collection(doc(db, "Doctors", doctorId), "patientList"));
 
       const patientData = [];

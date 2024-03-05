@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import doctorDP from "../../assets/doctor.jpg";
 import { colors } from "../../assets/colorPalette";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../config/firebaseConfigs";
 
 const DPCard = ({firstName, lastName, specialization, experience, hospitalAffiliation}) => {
 
