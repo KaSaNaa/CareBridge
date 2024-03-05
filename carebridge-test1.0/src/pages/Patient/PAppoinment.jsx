@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import "./pappoinment.css";
 import SelectApp from '../../components/ItemComponents/SelectApp.jsx'
@@ -28,6 +27,12 @@ export default function PAppoinment() {
     }
   };
 
+  const handleBack = () => {
+    setSelectedDoctor(null);
+    setSelectedAppointment(null);
+    setDisplayMultifilters(true);
+  };
+
   const renderAppointmentComponent = () =>{
     switch (selectedAppointment) {
       case 'book-appointment':
@@ -52,6 +57,7 @@ export default function PAppoinment() {
       <div className="com2">
         {renderAppointmentComponent()}
         {selectedDoctor && selectedDoctor.component === 'PInput' && selectedAppointment === 'book-appointment' && <PInput item={selectedDoctor.item} />}
+        {selectedAppointment && <button className ='back-button' onClick={handleBack}>Back</button>}
       </div>
     </div>
   );

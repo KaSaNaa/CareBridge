@@ -1,9 +1,9 @@
 import React from 'react';
 import './PSideBar.css';
-import appoinment from "../assets/appoinment.svg";
-import contact from "../assets/contact.svg";
-import history from "../assets/history.svg";
-import profile from "../assets/profile.svg";
+import appoinment from '../../assets/appoinment.svg';
+import contact from "../../assets/contact.svg";
+import history from "../../assets/history.svg";
+import profile from "../../assets/profile.svg";
 
 export default function PSideBar({ handleNavigation }) {
   return (

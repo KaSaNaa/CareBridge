@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import './pprofileCMP1.css';
-import profile from "../assets/profile.jpg";
+import profile from "../../assets/profile.jpg";
 
 export default function PProfileCMP1() {
     const [profileImage, setProfileImage] = useState(profile);
