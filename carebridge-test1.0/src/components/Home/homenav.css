@@ -77,9 +77,8 @@
   }
   
   .nav-bottom {
-    background-color: #f0f0f0;
     padding: 10px;
-    background-color: #46CDCF;
+    background-color: #016879;
     margin-top: 10px;
     margin-left: 1px;
     margin-right: 1px;
@@ -106,10 +105,14 @@
     border-radius: 5px;
     transition: background-color 0.3s ease;
     color: white;
+    transition: all 0.3s ease;
   }
   
   .top-nav-list a:hover {
-    background-color: #68b1a3;
+    background-color: white;
+    color:#016879;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
   }
   
   /* Responsive Styles */

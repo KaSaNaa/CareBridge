@@ -65,7 +65,7 @@ export default function PProfileCMP2() {
             </div>
         
             <div className="div-mid-input-al">
-                <h3 className="input-h3">Input Your Alergies</h3>
+                <h3 className="input-h3">Describe Your Alergies</h3>
                 <ul className="alergies-input-li">
                     <li><input type="text"></input></li>
                     <li><input type="text"></input></li>

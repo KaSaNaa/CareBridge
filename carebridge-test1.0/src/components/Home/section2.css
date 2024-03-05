@@ -96,6 +96,11 @@
     color: white;
     font-weight: bold;
     font-size: larger;
+    transition: all 0.3s ease;
+}
+.sml-con-btn1:hover {
+    background-color: #016879;
+    transform: scale(1.2);
 }
 
 .div-btn-cls {
