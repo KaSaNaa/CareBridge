@@ -86,7 +86,7 @@ export default function PInput({ handleClick, item }) {
             </div>
           </div>
         </div>
-        <button className="button1" type="submit">Book Appointment</button>
+        <button className="button1book" type="submit">Book Appointment</button>
       </form>
     </div>
   );

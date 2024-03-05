@@ -6,5 +6,6 @@ export default function Viewapp() {
     <div>
       ajnfjkawbfjkbawkjfkjavwfkvawk deenath
     </div>
+    
   )
 }

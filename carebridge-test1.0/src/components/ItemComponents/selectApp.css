@@ -1,5 +1,5 @@
 .select-app{
-    background-color: lightgray;
+    background-color: #edf5f7;
     width: 315px;
     height: 780px;
     border-radius: 5px;
@@ -11,15 +11,21 @@
 }
 .head-app{
     text-align: center;
-    padding: 50px;
+    padding: 5px;
     font-weight: bolder;
     font-size: 28px;
-    color: rgb(59, 60, 60);
+    background-color: #016879;
+    width: 305px;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 2px;
+    border-radius: 5px;
 }
 .app-ul li{
     padding: 20px;
     text-decoration: none;
     list-style-type: none;
+    
     
 }
 
@@ -29,11 +35,13 @@
     border: 1px solid rgba(0, 0, 0, 0.162);
     transition: all 0.3s ease;
     border-radius: 10px;
+    color: #016879;
 }
 .appoin-button:hover {
-    background-color: aqua;
+    background-color: #016879;
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(146, 146, 146, 0.5);
+    color: white;
     
     
 }

@@ -25,3 +25,6 @@ export const colors = {
     outline: '#6c7a7d',
     shadow: '#000000'
   };
+
+
+  

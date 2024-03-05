@@ -24,17 +24,18 @@ p {
 }
 
 .button {
-  border: 1px solid #000;
+  border: 1px solid  #0000004a;
   background: transparent;
   margin: 5px 5px;
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  color: #016879;
 }
 
 .button:hover {
-  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0);
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.22);
 }
 
 .items-container {
@@ -43,7 +44,7 @@ p {
   margin-top: 20px;
   justify-content: center;
   align-items: center;
-  color: #000;
+  color: #016879;
   margin-top: 100px;
 }
 
@@ -58,17 +59,19 @@ p {
   min-width: 100px;
   min-height: 50px;
   margin: 4px 10px;
-  border: 1px solid #000;
+  border: 1px solid #000000;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+
 .category {
   color: #64748b;
   font-size: 10px;
 }
+
 
 .active {
   background-color: #1e293b;
@@ -82,7 +85,8 @@ p {
 }
 
 .item:hover {
-  background-color: #f0f0f0; /* Change background color on hover */
+  background-color: #016879;
+  color: white; /* Change background color on hover */
 }
 
 
