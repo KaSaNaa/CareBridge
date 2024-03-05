@@ -1,48 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import doc from "../../assets/doctor.jpg";
+import doctorDP from "../../assets/doctor.jpg";
 import { colors } from "../../assets/colorPalette";
-import { getDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../config/firebaseConfigs";
 
-const DPCard = () => {
-  const [doctorData, setDoctorData] = useState(null);
-  const [experienceYears, setExperienceYears] = useState(null);
-  
-
-  useEffect(() => {
-    const fetchDoctorData = async () =>{
-      const doctorDocRef = await getDoc(db, "Doctors", "TQ6vymyy5F4knPsIxsu6");
-
-      try {
-        const doctorDocSnapshot = await doctorDocRef.get();
-        if (doctorDocSnapshot.exists()) {
-          const timestamp = doctorData.experience;
-          const date = timestamp.toDate();
-          setExperienceYears(date);
-
-          const currentDate = new Date();
-          const experienceInMilliseconds = currentDate - date;
-          const years = Math.floor(experienceInMilliseconds / (1000 * 60 * 60 * 24 * 365.25));
-          setExperienceYears(years);
-
-          setDoctorData(data);         
-        } else {
-          console.log("No such Doctor exists!");
-        }
-      } catch (error) {
-        console.log("Error getting Doctor data:", error);
-      }
-    };
-    fetchDoctorData();
-  }, [])
+const DPCard = ({firstName, lastName, specialization, experience, hospitalAffiliation}) => {
 
   return (
     <DpCard>
       <Wrapper>
-        <ProfilePic alt="dp" src={doc} />
-        <DoctorName>{doctorData.firstName + doctorData.lastName}</DoctorName>
-        <DoctorField>{doctorData.field}</DoctorField>
+        <ProfilePic alt="dp" src={doctorDP} />
+        <DoctorName>{firstName +" "+ lastName}</DoctorName>
+        <DoctorField>{specialization}</DoctorField>
         <HospitalAffiliations>
           <table>
             <tbody>
@@ -51,8 +21,8 @@ const DPCard = () => {
                 <Td2>Hospital Affiliations</Td2>
               </tr>
               <tr>
-                <Td3>{}</Td3>
-                <Td4>Mental Hospital</Td4>
+                <Td3>{experience}</Td3>
+                <Td4>{hospitalAffiliation}</Td4>
               </tr>
             </tbody>
           </table>
