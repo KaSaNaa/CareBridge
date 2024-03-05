@@ -1,22 +1,22 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import './pinput.css';
-import { initializeApp } from "firebase/app";
-import { getFirestore, addDoc, collection } from "firebase/firestore"; 
+//import { initializeApp } from "firebase/app";
+//import { getFirestore, addDoc, collection } from "firebase/firestore"; 
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyB6F_p2pV2x_PZgn-uujS4cw4wL7B_LUyQ",
-  authDomain: "chanel-7de94.firebaseapp.com",
-  projectId: "chanel-7de94",
-  storageBucket: "chanel-7de94.appspot.com",
-  messagingSenderId: "483251603039" ,
-  appId: "1:483251603039:web:03b9992b3b6fbf06c4bdea"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyB6F_p2pV2x_PZgn-uujS4cw4wL7B_LUyQ",
+//   authDomain: "chanel-7de94.firebaseapp.com",
+//   projectId: "chanel-7de94",
+//   storageBucket: "chanel-7de94.appspot.com",
+//   messagingSenderId: "483251603039" ,
+//   appId: "1:483251603039:web:03b9992b3b6fbf06c4bdea"
+// };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// const app = initializeApp(firebaseConfig);
+// const db = getFirestore(app);
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
 export default function PInput({ handleClick, item }) {

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import "./pappoinment.css";
-import SelectApp from '../../components/SelectApp';
-import PInput from '../../components/PInput';
-import Multifilters from '../../components/Multifilters.jsx';
-import Viewapp from '../../components/Viewapp.jsx';
-import Changeapp from '../../components/Changeapp';
+import SelectApp from '../../components/ItemComponents/SelectApp.jsx'
+import PInput from '../../components/ItemComponents/PInput.jsx'
+import Multifilters from '../../components/ItemComponents/Multifilters.jsx'
+import Viewapp from '../../components/ItemComponents/Viewapp.jsx'
+import Changeapp from '../../components/ItemComponents/Changeapp.jsx'
 
 
 export default function PAppoinment() {
@@ -25,6 +25,12 @@ export default function PAppoinment() {
       setSelectedAppointment('book-appointment');
       setDisplayMultifilters(false);
     }
+  };
+
+  const handleBack = () => {
+    setSelectedDoctor(null);
+    setSelectedAppointment(null);
+    setDisplayMultifilters(true);
   };
 
   const renderAppointmentComponent = () =>{
@@ -51,6 +57,7 @@ export default function PAppoinment() {
       <div className="com2">
         {renderAppointmentComponent()}
         {selectedDoctor && selectedDoctor.component === 'PInput' && selectedAppointment === 'book-appointment' && <PInput item={selectedDoctor.item} />}
+        {selectedAppointment && <button className ='back-button' onClick={handleBack}>Back</button>}
       </div>
     </div>
   );

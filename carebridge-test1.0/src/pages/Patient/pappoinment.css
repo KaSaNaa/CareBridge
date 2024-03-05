@@ -1,7 +1,8 @@
 .page {
     display: flex;
      flex-direction: row;
-     gap:500px
+     gap: 250px;
+     
   }
   
   .com1 {
@@ -10,13 +11,34 @@
   }
   
   .com2 {
-    width: 315px;
+    width: 100%;
     margin-left: 5px;
-    margin-right: 5px; /* Adjust margin to minimize the gap */
+    margin-right: 5px;
+    
   }
-  
-  .com3 {
+  .back-button{
+    padding: 20px;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin-top: 50px;
-    flex-grow: 1; /* Allow the component to take remaining space */
+    border: none;
+    transition: all 0.3 sease;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+
+  }
+
+  .back-button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.182);
+   
+    
   }
   

@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React, {useState} from 'react'
-import PSideBar from '../../components/PSideBar.jsx';
+// import PSideBar from '../../components/PSideBar.jsx';
+import PSideBar from '../../components/ItemComponents/PSideBar.jsx';
 import Profile from '../Patient/Profile.jsx';
 import PAppoinment from '../Patient/PAppoinment.jsx';
 import Contact from '../Patient/Contact.jsx';
