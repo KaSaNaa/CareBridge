@@ -3,7 +3,7 @@ import styled from "styled-components";
 import profilePic1 from "../../assets/doctor.jpg";
 import Swal from "sweetalert2"; // Import SweetAlert library
 
-import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { collection, getDocs, deleteDoc, doc, getDoc } from "firebase/firestore";
 import { db } from "../../config/firebaseConfigs";
 import { colors } from "../../assets/colorPalette";
 
@@ -12,39 +12,28 @@ const PatientTable = () => {
 
   useEffect(() => {
     const getPatients = async () => {
-      const querySnapshot = await getDocs(collection(db, "Patients"));
-      const patientData = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
+      const doctorId = 'TQ6vymyy5F4knPsIxsu6'; // replace with your doctor id
+      const querySnapshot = await getDocs(collection(doc(db, "Doctors", doctorId), "patientList"));
+
+      const patientData = [];
+      for (const docRef of querySnapshot.docs) {
+        const patientId = docRef.data().UID;
+        const patientSnapshot = await getDoc(doc(db, "Patients", patientId));
+        const patient = { id: patientId, ...patientSnapshot.data() };
+        patientData.push(patient);
+      }
+
       setPatients(patientData);
     };
 
     getPatients();
   }, []);
 
-  // const handleEdit = (patient) => {
-  //   // Show confirmation message
-  //   Swal.fire({
-  //     title: "Edit Patient",
-  //     text: `Edit details for ${patient.name}?`,
-  //     icon: "question",
-  //     showCancelButton: true,
-  //     confirmButtonText: "Edit",
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       // Implement edit functionality here
-  //       // You can redirect to an edit page or show a modal for editing
-  //       console.log("Editing patient:", patient);
-  //     }
-  //   });
-  // };
-
   const handleDelete = (patient) => {
     // Show confirmation message
     Swal.fire({
-      title: "Delete Patient",
-      text: `Are you sure you want to delete ${patient.name}?`,
+      title: "Remove Patient",
+      text: `Are you sure you want to remove ${patient.id}?`,
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#d33",
@@ -53,13 +42,13 @@ const PatientTable = () => {
       if (result.isConfirmed) {
         // Implement delete functionality here
         try {
-          await deleteDoc(doc(db, "Patients", patient.id));
+          await deleteDoc(doc(db, "Doctors/TQ6vymyy5F4knPsIxsu6/patientList/", patient.id));
           // Update state to remove the deleted patient
           setPatients(patients.filter((p) => p.id !== patient.id));
-          Swal.fire("Deleted!", "The patient has been deleted.", "success");
+          Swal.fire("Removed!", "The patient has been removed.", "success");
         } catch (error) {
-          console.error("Error deleting patient:", error);
-          Swal.fire("Error", "Failed to delete the patient.", "error");
+          console.error("Error removing patient:", error);
+          Swal.fire("Error", "Failed to remove the patient.", "error");
         }
       }
     });
@@ -72,10 +61,13 @@ const PatientTable = () => {
           <tr>
             <TableHeader>ID</TableHeader>
             <TableHeader>Pic</TableHeader>
-            <TableHeader>Name</TableHeader>
+            <TableHeader>First Name</TableHeader>
+            <TableHeader>Last Name</TableHeader>
+            <TableHeader>Mobile</TableHeader>
             <TableHeader>Age</TableHeader>
             <TableHeader>Gender</TableHeader>
             <TableHeader>Blood Type</TableHeader>
+            <TableHeader></TableHeader>
             <TableHeader>Actions</TableHeader> {/* Add Actions header */}
           </tr>
         </TableHead>
@@ -86,7 +78,9 @@ const PatientTable = () => {
               <TableCell>
                 <ProfilePic src={profilePic1} alt="Profile Picture" />
               </TableCell>
-              <TableCell>{patient.name}</TableCell>
+              <TableCell>{patient.fName}</TableCell>
+              <TableCell>{patient.lName}</TableCell>
+              <TableCell>{patient.mobile}</TableCell>
               <TableCell>{patient.age}</TableCell>
               <TableCell>{patient.gender}</TableCell>
               <TableCell>{patient.bloodtype}</TableCell>
@@ -102,6 +96,7 @@ const PatientTable = () => {
 };
 
 export default PatientTable;
+
 
 const TableWrapper = styled.div`
   display: flex;

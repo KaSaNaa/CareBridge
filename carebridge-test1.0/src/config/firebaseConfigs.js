@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getAuth } from 'firebase/auth';
+import { browserLocalPersistence, getAuth, onAuthStateChanged, setPersistence } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -18,3 +18,11 @@ const app = initializeApp(firebaseConfig)
 // You can initialize any service as you need in here..
 export const db = getFirestore(app);
 export const auth = getAuth(app);
+export const persistence = setPersistence(auth, browserLocalPersistence);
+export const authState = onAuthStateChanged(auth, (user) =>{
+  if(user){
+    console.log('User is signed in')
+  }else{
+    console.log('User is signed out')
+  }
+})

@@ -12,6 +12,7 @@ import {
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { db, auth } from "../../config/firebaseConfigs";
+import Swal from "sweetalert2";
 
 const SideBar = ({ formType }) => {
   const [userData, setUserData] = useState({
@@ -57,8 +58,15 @@ const SideBar = ({ formType }) => {
           userData.email,
           userData.password
         );
-        alert("Sign in successful!");
-        navigate("/DoctorDashboard");
+        //sign in successful Swal alert
+        Swal.fire({
+          icon: "success",
+          title: `Signed In!`,
+          showConfirmButton: false,
+          timer: 1500,
+        }).then(() => {
+          navigate("/home");
+        });
       } else {
         const { email, password, fName, lName, mobile } = userData;
         if (userData.password !== userData.confirmPassword) {
@@ -81,7 +89,11 @@ const SideBar = ({ formType }) => {
         });
       }
     } catch (error) {
-      alert("Authentication failed" + error.message);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error.message,
+      });
     }
   };
 
