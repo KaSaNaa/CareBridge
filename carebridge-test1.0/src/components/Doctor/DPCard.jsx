@@ -1,15 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import doc from "../../assets/doctor.jpg";
 import { colors } from "../../assets/colorPalette";
+import { getDoc } from "firebase/firestore";
+import { db } from "../../config/firebaseConfigs";
 
 const DPCard = () => {
+  const [doctorData, setDoctorData] = useState(null);
+  const [experienceYears, setExperienceYears] = useState(null);
+  
+
+  useEffect(() => {
+    const fetchDoctorData = async () =>{
+      const doctorDocRef = await getDoc(db, "Doctors", "TQ6vymyy5F4knPsIxsu6");
+
+      try {
+        const doctorDocSnapshot = await doctorDocRef.get();
+        if (doctorDocSnapshot.exists()) {
+          const timestamp = doctorData.experience;
+          const date = timestamp.toDate();
+          setExperienceYears(date);
+
+          const currentDate = new Date();
+          const experienceInMilliseconds = currentDate - date;
+          const years = Math.floor(experienceInMilliseconds / (1000 * 60 * 60 * 24 * 365.25));
+          setExperienceYears(years);
+
+          setDoctorData(data);         
+        } else {
+          console.log("No such Doctor exists!");
+        }
+      } catch (error) {
+        console.log("Error getting Doctor data:", error);
+      }
+    };
+    fetchDoctorData();
+  }, [])
+
   return (
     <DpCard>
       <Wrapper>
         <ProfilePic alt="dp" src={doc} />
-        <DoctorName>Dr. Amanda J. Rodriguez</DoctorName>
-        <DoctorField>Pediatrics</DoctorField>
+        <DoctorName>{doctorData.firstName + doctorData.lastName}</DoctorName>
+        <DoctorField>{doctorData.field}</DoctorField>
         <HospitalAffiliations>
           <table>
             <tbody>
@@ -18,7 +51,7 @@ const DPCard = () => {
                 <Td2>Hospital Affiliations</Td2>
               </tr>
               <tr>
-                <Td3>15 Years</Td3>
+                <Td3>{}</Td3>
                 <Td4>Mental Hospital</Td4>
               </tr>
             </tbody>

@@ -67,7 +67,6 @@ const PatientTable = () => {
             <TableHeader>Age</TableHeader>
             <TableHeader>Gender</TableHeader>
             <TableHeader>Blood Type</TableHeader>
-            <TableHeader></TableHeader>
             <TableHeader>Actions</TableHeader> {/* Add Actions header */}
           </tr>
         </TableHead>
@@ -85,7 +84,7 @@ const PatientTable = () => {
               <TableCell>{patient.gender}</TableCell>
               <TableCell>{patient.bloodtype}</TableCell>
               <TableCell>
-                <Button className="del" onClick={() => handleDelete(patient)}>Delete</Button>
+                <Button className="del" onClick={() => handleDelete(patient)}>Remove</Button>
               </TableCell>
             </TableRow>
           ))}
