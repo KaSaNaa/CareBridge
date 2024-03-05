@@ -1,10 +1,11 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import "./pappoinment.css";
-import SelectApp from '../../components/SelectApp';
-import PInput from '../../components/PInput';
-import Multifilters from '../../components/Multifilters.jsx';
-import Viewapp from '../../components/Viewapp.jsx';
-import Changeapp from '../../components/Changeapp';
+import SelectApp from '../../components/ItemComponents/SelectApp.jsx'
+import PInput from '../../components/ItemComponents/PInput.jsx'
+import Multifilters from '../../components/ItemComponents/Multifilters.jsx'
+import Viewapp from '../../components/ItemComponents/Viewapp.jsx'
+import Changeapp from '../../components/ItemComponents/Changeapp.jsx'
 
 
 export default function PAppoinment() {
