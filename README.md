@@ -7,7 +7,7 @@ This app is protected by O.R.K.M.M License which is a self-made license which st
 
 ## Class Diagram
 ```plantuml
-    @startuml CareBridge
+@startuml CareBridge
 
 class App {
   - isAuthenticated: boolean
