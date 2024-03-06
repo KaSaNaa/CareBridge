@@ -4,6 +4,7 @@ import Auth from "./pages/Auth/Auth";
 import DoctorsUI from "./pages/Doctor/DoctorsUI";
 import MainHome from "./pages/Home/MainHome";
 import { auth } from "./config/firebaseConfigs"; // Import the auth object from your firebaseConfig.js
+import Aboutus from './pages/Sidepages/Aboutus.jsx'
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -36,6 +37,13 @@ const App = () => {
         />
         <Route
           exact
+          path="/signup"
+          element={
+            <Auth inORup={'signup'}/>
+          }
+        />
+        <Route
+          exact
           path="/signin"
           element={!user ? <Auth inORup={"signin"} /> : <Navigate to="/signin" />}
         />
@@ -45,11 +53,11 @@ const App = () => {
         />
 
 
-        //TODO : empty routes for @deenath
+       
         
         <Route
-          path="/"
-          element={<MainHome />}
+          path="/aboutus"
+          element={<Aboutus />}
         />
 
         <Route

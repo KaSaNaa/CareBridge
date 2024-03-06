@@ -3,6 +3,7 @@ import './aboutus.css';
 import AboutusCMP1 from '../../components/SidePages/AboutusCMP1';
 import AboutusCMP2 from '../../components/SidePages/AboutusCMP2';
 import AboutHead from '../../components/SidePages/AboutHead';
+import { Link, Navigate } from 'react-router-dom';
 
 
 export default function Aboutus() {
@@ -12,7 +13,7 @@ export default function Aboutus() {
         <AboutusCMP1/>
         <AboutusCMP2/>
 
-        <button className="back-home">Back to home</button>
+        <Link to='/home'><button className="back-home">Back to home</button></Link>
       
     </div>
   )

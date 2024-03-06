@@ -7,6 +7,7 @@ import facebook from '../../assets/facebook.png';
 import twitter from '../../assets/twitter.png';
 import instagram from '../../assets/instagram.png';
 import linkedin from '../../assets/linkedin.png';
+import { Link } from 'react-router-dom';
 
 const HomeNav = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -59,9 +60,9 @@ const HomeNav = () => {
         </div>
           
         <div className="top-nav3">
-          <button className="book-app">Appoinment</button>
-          <button className="main-signin">Sign-in</button>
-          <button className="main-signup">Sign-up</button>
+          <Link to='/signin'><button className="book-app">Doctor Sign in</button></Link>
+          <Link to='/signin'><button className="main-signin">Sign-in</button></Link>
+          <Link to='/signup'><button className="main-signup">Sign-up</button></Link>
         </div>
       </div>
       <div className="nav-bottom">

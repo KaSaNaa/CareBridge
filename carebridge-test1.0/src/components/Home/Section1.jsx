@@ -1,6 +1,7 @@
 // Section1.jsx (Com1)
 import React from 'react';
 import './section1.css';
+import { Link } from 'react-router-dom';
 
 export default function Com1() {
   
@@ -11,7 +12,7 @@ export default function Com1() {
         <h1 className="smh1">WE CARE ABOUT <br/>YOUR <span className="highlight">HEALTH</span></h1>
       </div>
       <div className="com1-part2">
-        <button className="btn-abt">About Us</button>
+        <Link to='/aboutus'><button className="btn-abt">About Us</button></Link>
         <button className="btn-con">Contact Us</button>
       </div>
     </div>
