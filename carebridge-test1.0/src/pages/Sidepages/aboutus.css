@@ -1,0 +1,26 @@
+.combine-about{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.back-home{
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background-color: #016879;
+    color: white;
+    font-weight:bold ;
+    transition:all 0.3s ease ;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.back-home:hover{
+    background-color: #0167795d;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
