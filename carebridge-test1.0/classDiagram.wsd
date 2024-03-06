@@ -1,0 +1,109 @@
+@startuml CareBridge
+
+class App {
+  - isAuthenticated: boolean
+  + render(): JSX.Element
+  - fetchDoctorDetails(): void
+}
+
+class Auth {
+  - inORup: string
+  - isAuthenticated: boolean
+  + render(): JSX.Element
+  - handleSignIn(): void
+  - handleSignUp(): void
+  - handleSignOut(): void
+}
+
+class DoctorDashboard {
+  - doctorData: DoctorData
+  + render(): JSX.Element
+  - fetchDoctorDetails(): void
+}
+
+class Dashboard {
+  - doctorData: DoctorData
+  + render(): JSX.Element
+  - fetchDoctorDetails(): void
+}
+
+class DoctorAppointments {
+  - doctorUid: string
+  - appointments: Appointment[]
+  + render(): JSX.Element
+  - fetchAppointments(): void
+}
+
+class PatientDashboard {
+  - patientData: PatientData
+  + render(): JSX.Element
+  - fetchPatientDetails(): void
+}
+
+class Appointment {
+  - id: string
+  - doctorEmail: string
+  - patientEmail: string
+  - scheduledTime: Date
+}
+
+class DoctorData {
+  - firstName: string
+  - lastName: string
+  - address: string
+  - biography: string
+  - contactNumber: string
+  - dob: string
+  - email: string
+  - experience: string
+  - gender: string
+  - hospitalAffiliation: string
+  - officeHours: string
+  - professionalQualification: string
+  - specialization: string
+}
+
+class PatientData {
+  - firstName: string
+  - lastName: string
+  - address: string
+  - contactNumber: string
+  - dob: string
+  - email: string
+  - gender: string
+}
+
+class AppointmentForm {
+  + handleSubmit(): void
+}
+
+class Firestore {
+  - db: FirebaseFirestore
+  - auth: FirebaseAuth
+  + getFirestore(): FirebaseFirestore
+  + getAuth(): FirebaseAuth
+}
+
+App --|> Auth
+App --|> DoctorDashboard
+App --|> Dashboard
+DoctorDashboard --|> DoctorData
+Dashboard --|> DoctorData
+DoctorAppointments --|> Appointment
+App --|> PatientDashboard
+PatientDashboard --|> PatientData
+AppointmentForm --|> Firestore
+
+Auth -- Firestore: Uses
+DoctorDashboard -- Firestore: Fetches doctor details
+Dashboard -- Firestore: Fetches doctor details
+DoctorAppointments -- Firestore: Fetches appointments
+PatientDashboard -- Firestore: Fetches patient details
+
+AppointmentForm --|> DoctorData: Loads doctor data
+AppointmentForm --|> Appointment: Submits appointment data
+
+DoctorDashboard -- DoctorAppointments: Displays appointments
+PatientDashboard -- DoctorAppointments: Displays appointments
+
+@enduml

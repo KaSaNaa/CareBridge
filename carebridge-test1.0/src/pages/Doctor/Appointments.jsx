@@ -1,8 +1,8 @@
 import React from "react";
-import AppointmentForm from "./AppointmentForm";
+import DoctorAppointments from "./AppointmentTable";
 
 const Appointments = () => {
-  return <div><AppointmentForm/></div>;
+  return <div><DoctorAppointments/></div>;
 };
 
 export default Appointments;
