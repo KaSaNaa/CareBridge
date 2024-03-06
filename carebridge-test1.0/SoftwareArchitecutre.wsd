@@ -1,0 +1,35 @@
+@startuml CareBridge
+
+package "Frontend" {
+  [App]
+  [Auth]
+  [DoctorDashboard]
+  [Dashboard]
+  [DoctorAppointments]
+  [PatientDashboard]
+  [AppointmentForm]
+  [HomePage]
+}
+
+package "Backend" {
+  [Firestore]
+}
+
+package "Data Models" {
+  [Appointment]
+  [DoctorData]
+  [PatientData]
+}
+
+HomePage --|> Auth
+App --|> HomePage
+App --|> Auth
+App --|> DoctorDashboard
+App --|> Dashboard
+DoctorDashboard --|> DoctorData
+Dashboard --|> DoctorData
+DoctorAppointments --|> Appointment
+App --|> PatientDashboard
+AppointmentForm --|> Firestore
+
+@enduml
