@@ -6,6 +6,7 @@ import MainHome from "./pages/Home/MainHome";
 import { auth } from "./config/firebaseConfigs"; // Import the auth object from your firebaseConfig.js
 import Aboutus from './pages/Sidepages/Aboutus.jsx'
 import Patient from './pages/Display/Patient.jsx'
+import ContactPage1 from "./components/SidePages/ContactPage1.jsx";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -67,8 +68,8 @@ const App = () => {
         />
 
         <Route
-          path="/"
-          element={<MainHome />}
+          path="/contact"
+          element={<ContactPage1 />}
         />
       </Routes>
     </Router>

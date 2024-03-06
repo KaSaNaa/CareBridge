@@ -13,7 +13,7 @@ export default function Com1() {
       </div>
       <div className="com1-part2">
         <Link to='/aboutus'><button className="btn-abt">About Us</button></Link>
-        <button className="btn-con">Contact Us</button>
+        <Link to='/contact'><button className="btn-con">Contact Us</button></Link>
       </div>
     </div>
   );

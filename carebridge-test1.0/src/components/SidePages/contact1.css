@@ -1,0 +1,100 @@
+.contact1-main-cont {
+    background-image: url('../../assets/wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+     /* Center vertically */
+    background-color: rgba(255, 255, 255, 0.429); 
+/* Adjust the last value for transparency */
+}
+.contact1-sub-part1{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+    gap: 10px;
+}
+
+.contactus-head{
+    font-size: 50px;
+    font-weight: bold;
+
+}
+.small-contactus-head{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.571);
+
+}
+
+
+.con2-sub1{
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    gap:10px;
+    text-align: center;
+}
+.sub1-heading{
+    font-size: 30px;
+    color: #016879;
+
+}
+.sub1-para{
+    font-size: 15px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.742);
+}
+.left-mid-sub2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 130px;
+    padding: 20px;
+    text-align: center;
+
+}
+.Cicon-topic{
+    font-size: 25px;
+    align-items: center;
+    text-align: center;
+
+}
+
+.Cicon-para{
+    font-size: 18px;
+    align-items: center;
+    text-align: center;
+
+}
+
+.contact-main-cont2{
+    border: 1px solid rgba(0, 0, 0, 0.391);
+    box-shadow: 5px 5px 5px black;
+}
+
+.contact-fin-btn{
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    justify-content: ;
+    border: none;
+    border-radius: 10px;
+    background-color: #016879;
+    color: white;
+    font-weight:bold ;
+    transition:all 0.3s ease ;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin: 20px;
+}
+.contact-fin-btn:hover{
+    background-color: #0167795d;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}

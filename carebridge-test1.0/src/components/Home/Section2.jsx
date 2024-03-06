@@ -4,6 +4,7 @@ import './section2.css';
 import TitleCom from './TitleCom';
 import tick from '../../assets/tick.png';
 import read from '../../assets/read.jpg';
+import { Link } from 'react-router-dom';
 
 export default function Com2() {
   return (
@@ -31,7 +32,7 @@ export default function Com2() {
         </tr>
       </table>
       <div className="div-btn-cls">
-      <button className="sml-con-btn1">Contact Us</button>
+      <Link to='/contact'><button className="sml-con-btn1">Contact Us</button></Link>
       </div>
      </div>
     </div>

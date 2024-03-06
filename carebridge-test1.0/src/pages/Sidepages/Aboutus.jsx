@@ -1,9 +1,9 @@
 import React from 'react'
 import './aboutus.css';
-import AboutusCMP1 from '../../components/SidePages/AboutusCMP1';
-import AboutusCMP2 from '../../components/SidePages/AboutusCMP2';
-import AboutHead from '../../components/SidePages/AboutHead';
-import { Link, Navigate } from 'react-router-dom';
+import AboutusCMP1 from '../../components/SidePages/AboutusCMP1.jsx'
+import AboutusCMP2 from '../../components/SidePages/AboutusCMP2.jsx';
+import AboutHead from '../../components/SidePages/AboutHead.jsx';
+import { Link } from 'react-router-dom';
 
 
 export default function Aboutus() {
