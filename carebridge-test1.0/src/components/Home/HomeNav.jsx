@@ -1,20 +1,44 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import './homenav.css';
 import call from '../../assets/call.svg';
 import mail from '../../assets/mail.svg';
 import whatsapp from '../../assets/whatsapp.png';
 import facebook from '../../assets/facebook.png';
 import twitter from '../../assets/twitter.png';
-import  instagram from '../../assets/instagram.png';
+import instagram from '../../assets/instagram.png';
 import linkedin from '../../assets/linkedin.png';
 
+const HomeNav = () => {
+  const [activeSection, setActiveSection] = useState('home');
 
+  const handleScroll = () => {
+    const sections = ['Home', 'Department', 'Service', 'Specialist', 'Blog', 'Contact'];
+    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
 
-export default function HomeNav() {
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element && scrollPos >= element.offsetTop - 60) {
+        setActiveSection(section);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleClick = (section) => {
+    setActiveSection(section);
+    const element = document.getElementById(section);
+    window.scrollTo({ top: element.offsetTop - 60, behavior: 'smooth' });
+  };
+
   return (
     <div className="home-nav-con">
-      <div className="nav-top">
+           <div className="nav-top">
         <div className="top-nav1">
           <img src={whatsapp} alt="whatsapp"></img>
           <img src={instagram} alt="instagram"></img>
@@ -40,18 +64,17 @@ export default function HomeNav() {
           <button className="main-signup">Sign-up</button>
         </div>
       </div>
-
       <div className="nav-bottom">
         <ul className="top-nav-list">
-          <li><a href="home">Home</a></li>
-          <li><a href="About">About</a></li>
-          <li><a href="Department">Department</a></li>
-          <li><a href="Page">Page</a></li>
-          <li><a href="Block">Block</a></li>
-          <li><a href="Contact">Contact</a></li>
+          {['Home', 'Department', 'Service', 'Specialist', 'Blog', 'Contact'].map((section) => (
+            <li key={section}>
+              <a href={`#${section}`} onClick={(e) => { e.preventDefault(); handleClick(section); }}>{section}</a>
+            </li>
+          ))}
         </ul>
       </div>
-      
     </div>
-  )
-}
+  );
+};
+
+export default HomeNav;

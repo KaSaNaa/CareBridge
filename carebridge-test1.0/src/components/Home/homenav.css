@@ -1,7 +1,7 @@
 /* Define general styles */
 
 .home-nav-con {
-    background-color: #D9D9D9; 
+    background-color: #edf5f7; 
     margin-bottom: 0px;/* Light gray background */
   }
   
@@ -56,24 +56,27 @@
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    color: white;
+    font-weight: bold;
   }
   
   .book-app {
-    background-color: #66c0f4; /* Light blue */
+    background-color: #336472; /* Light blue */
     
   }
   
   .main-signin {
-    background-color: #b583e3; /* Purple */
+    background-color: #016879; /* Purple */
   }
   
   .main-signup {
-    background-color: #fc847e; /* Coral */
+    background-color: #016879; /* Coral */
   }
   
   .book-app:hover, .main-signin:hover, .main-signup:hover {
-    background-color: #4da8d3; /* Darker shade on hover */
+    background-color: #01677979; /* Darker shade on hover */
     transform: translateY(-2px); /* Slight lift on hover */
+    color: black;
   }
   
   .nav-bottom {

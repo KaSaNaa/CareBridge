@@ -38,15 +38,19 @@
     color: black;
     padding: 5px;
     margin-bottom: 10px;
+    text-align: center;
 
 }
 
 .cd-p{
     text-align: center;
     padding: 5px;
-    margin-top: 7px;
+    
     font-size: 15px;
-    font-weight: lighter;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.345);
+
+    
 
 
 }

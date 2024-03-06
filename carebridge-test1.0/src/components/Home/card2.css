@@ -56,7 +56,8 @@
 .card2-para{
     padding: 10px;
     font-size: medium;
-    font-weight: lighter;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.337);
 
 }
 

@@ -6,13 +6,13 @@
     padding-top: 40px;
 }
 .small-head{
-    color: black;
+    color: #016879;
     font-size: 25px;
 
 }
 .small-para{
-    color: rgb(0, 0, 0);
-    font-weight:lighter;
+    color: rgba(0, 0, 0, 0.32);
+    font-weight:normal;
     font-size: 20px;
     margin-top: 10px;
 
@@ -31,7 +31,7 @@
 .dev-lin{
     height: 1px;
     width: 250px;
-    background:#2020209a;
+    background:#6e538a;
     display: flex;
     flex-direction: row;
     margin-top:15px;
