@@ -18,7 +18,7 @@ const SideNavbar = ({ onSideNavBarClick }) => {
   };
 
   return (
-    <SidebarWrapper>
+    
       <SidebarBody>
         <UnorderedList>
           {makeButtons.map((btn, i) => (
@@ -32,7 +32,7 @@ const SideNavbar = ({ onSideNavBarClick }) => {
           ))}
         </UnorderedList>
       </SidebarBody>
-    </SidebarWrapper>
+    
   );
 };
 
@@ -43,16 +43,7 @@ const makeButtons = [
   { icon: <img src={appointments} alt="appointments" />, title: "Visits" },
 ];
 
-const SidebarWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100vh;
-  background: ${colors.SurfContainer};
-  z-index: 2;
-  transition: transform 0.3s ease-in-out;
-`;
+
 
 const SidebarBody = styled.div`
   display: flex;
@@ -60,7 +51,7 @@ const SidebarBody = styled.div`
   justify-content: flex-start;
   align-items: center;
   height: 100%;
-  padding-top: 20px;
+  padding-top: 0.6px;
 `;
 
 const UnorderedList = styled.ul`

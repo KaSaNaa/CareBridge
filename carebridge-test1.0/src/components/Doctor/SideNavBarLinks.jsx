@@ -20,6 +20,9 @@ const ButtonSidebar = styled.button`
   width: 100%;
   text-decoration: none;
   display: flex;
+  margin:5px;
+  margin-left: 0px;
+
   align-items: center;
   justify-content: left;
   font-size: 15px;
