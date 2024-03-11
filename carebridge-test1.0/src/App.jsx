@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Auth from "./pages/Auth/Auth";
 import DoctorsUI from "./pages/Doctor/DoctorsUI";

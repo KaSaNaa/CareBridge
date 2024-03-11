@@ -1,6 +1,4 @@
-// In SideBarButton.js
-
-import React from "react";
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { colors } from "../../assets/colorPalette";
 
