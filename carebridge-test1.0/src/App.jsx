@@ -12,7 +12,7 @@ import { auth } from "./config/firebaseConfigs"; // Import the auth object from 
 import Aboutus from "./pages/Sidepages/Aboutus.jsx";
 import Patient from "./pages/Display/Patient.jsx";
 import ContactPage1 from "./components/SidePages/ContactPage1.jsx";
-import ProtectedRoutes from "../../Routes/ProtectedRoutes.jsx";
+import ProtectedRoutes from "./Routes/ProtectedRoutes.jsx";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -48,6 +48,8 @@ const App = () => {
           }
         />
         <Route path="/home" element={<MainHome />} />
+
+        <Route path="/" element={<MainHome />} />
 
         <Route path="/aboutus" element={<Aboutus />} />
 

@@ -1,6 +1,8 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { auth } from "./config/firebaseConfigs";
+import { auth } from "../config/firebaseConfigs";
+import { useEffect, useState } from "react";
 
+// eslint-disable-next-line react/prop-types
 const ProtectedRoutes = ({ children }) => {
   const location = useLocation();
   const [user, setUser] = useState(null);
