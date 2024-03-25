@@ -40,6 +40,8 @@ const App = () => {
         />
         <Route exact path="/signin" element={<Auth inORup={"signin"} />} />
         <Route exact path="/signup" element={<Auth inORup={"signup"} />} />
+        <Route exact path="/doc" element={<DoctorsUI />} />
+
         <Route
           exact
           path="/signin"
